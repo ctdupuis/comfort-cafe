@@ -1,0 +1,71 @@
+.banner {
+    background-color: var(--d-green);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo-container {
+    width: 21%;
+}
+
+.logo {
+    color: whitesmoke;
+    margin-left: 3%;
+}
+
+nav {
+    height: 30px;
+}
+
+.nav-container {
+    background-color: var(--l-green);
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.nav-item {
+    color: whitesmoke;
+    margin-right: 2%;
+    display: flex;
+    align-items: center;
+    font-size: large;
+}
+
+.nav-item:hover {
+    color: var(--d-green);
+    cursor: pointer;
+}
+
+.auth-container {
+    display: flex;
+    width: 10%;
+}
+
+.auth-item {
+    color: whitesmoke;
+    margin-right: 8%;
+}
+
+.auth-item a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: large;
+}
+
+.auth-item a:hover {
+    color: var(--l-green);
+}
+
+.wrapper {
+    padding: 2%;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
