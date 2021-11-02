@@ -9,6 +9,8 @@ import About from './components/static/About';
 import Locations from './components/static/Locations';
 import Careers from './components/careers/Careers';
 import Order from './components/orders/Order';
+import Login from './components/sessions/Login';
+import Register from './components/sessions/Register';
 
 function App() {
   return (
@@ -47,6 +49,17 @@ function App() {
       <Route exact path={"/order"}
         render={props => <Order />}
       />
+
+
+      <Route exact path={"/login"}
+        render={props => <Login />}
+      />
+
+
+      <Route exact path={"/register"}
+        render={props => <Register />}
+      />
+      
     </div>
   );
 }

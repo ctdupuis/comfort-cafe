@@ -1,5 +1,6 @@
 import React from 'react';
-import '../../stylesheets/header.css'
+import '../../stylesheets/header.css';
+import { NavLink } from 'react-router-dom';
 
 export default function Header() {
     return (
@@ -9,10 +10,14 @@ export default function Header() {
             </div>
             <div class="auth-container">
                 <div class="auth-item">
-                    <a href="#">Sign up</a>
+                    <NavLink to={"/register"}>
+                        Sign up
+                    </NavLink>
                 </div>
                 <div class="auth-item">
-                    <a href="#">Log in</a>
+                    <NavLink to={"/login"}>
+                        Log in
+                    </NavLink>
                 </div>
             </div>
         </header>
