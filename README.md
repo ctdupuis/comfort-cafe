@@ -16,7 +16,7 @@ This is a little side project I've been working on since the first time we did F
 
 [Menu Page](https://www.figma.com/file/rNPn0P1IX3ILIya7gbZy9Z/Comfort-Caf%C3%A9?node-id=8%3A85)
 
-[Repo Containing Home Page done in HTML/CSS](git@github.com:ctdupuis/html-css-1.git)
+[Repo Containing Home Page done in HTML/CSS](https://git@github.com:ctdupuis/html-css-1.git)
 
 ## Front End
 
