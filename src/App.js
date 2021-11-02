@@ -5,6 +5,7 @@ import Nav from './components/static/Nav';
 import Home from './components/static/Home';
 import { Route, Redirect } from 'react-router-dom';
 import Menu from './components/menu/Menu';
+import About from './components/static/About';
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
      
       <Route exact path={"/menu"}
         render={(props) => <Menu />}
+      />
+
+      <Route exact path={"/about"}
+        render={(props) => <About />}
       />
     </div>
   );
