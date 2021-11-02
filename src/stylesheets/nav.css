@@ -21,3 +21,17 @@ nav {
     color: var(--d-green);
     cursor: pointer;
 }
+
+.nav-item a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.nav-item a:hover {
+    color: var(--d-green);
+    cursor: pointer;
+}
+
+/* .nav-item a.active {
+    color: var(--d-green);
+} */
