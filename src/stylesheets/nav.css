@@ -1,0 +1,23 @@
+nav {
+    height: 30px;
+}
+
+.nav-container {
+    background-color: var(--l-green);
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.nav-item {
+    color: whitesmoke;
+    margin-right: 2%;
+    display: flex;
+    align-items: center;
+    font-size: large;
+}
+
+.nav-item:hover {
+    color: var(--d-green);
+    cursor: pointer;
+}
