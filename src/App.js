@@ -6,6 +6,9 @@ import Home from './components/static/Home';
 import { Route, Redirect } from 'react-router-dom';
 import Menu from './components/menu/Menu';
 import About from './components/static/About';
+import Locations from './components/static/Locations';
+import Careers from './components/careers/Careers';
+import Order from './components/orders/Order';
 
 function App() {
   return (
@@ -31,6 +34,18 @@ function App() {
 
       <Route exact path={"/about"}
         render={(props) => <About />}
+      />
+
+      <Route exact path={"/locations"}
+        render={(props) => <Locations />}
+      />
+
+      <Route exact path={"/careers"}
+        render={props => <Careers />}
+      />
+
+      <Route exact path={"/order"}
+        render={props => <Order />}
       />
     </div>
   );
