@@ -16,7 +16,7 @@ export default function Header() {
                 </div>
                 <div class="auth-item">
                     <NavLink to={"/login"}>
-                        This is the Login page
+                        Log in
                     </NavLink>
                 </div>
             </div>
