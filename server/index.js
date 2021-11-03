@@ -35,16 +35,11 @@ app.get("/", (req, res) => {
 const username = "username"
 const password = "password"
 
-app.post("/login", (req, res) => {
-    if (req.body.username === username && req.body.password === password) {
-        session = req.session;
-        session.userId = req.body.username;
-        console.log(req.session);
-        res.send(`${username} has succesfully logged in`);
-    } else {
-        res.send("invalid username or password");
-    }
-})
+const {
+    loginUser
+} = require("./controllers/session")
+
+app.post("/login", loginUser)
 
 app.get("logout", (req, res) => {
     req.session.destroy();
