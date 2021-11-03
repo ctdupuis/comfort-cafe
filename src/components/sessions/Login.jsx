@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { loginUser } from '../../actions/users';
 
 export default class Login extends Component {
     state = {
@@ -14,7 +15,7 @@ export default class Login extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        window.alert(`${this.state.username} | ${this.state.password}`);
+        loginUser(this.state);
         this.setState({
             username: "",
             password: ""
@@ -26,12 +27,12 @@ export default class Login extends Component {
             <div className="wrapper">
                 <form className="session-form" onSubmit={this.handleSubmit} >
 
-                    <label for="username">Username</label>
+                    <label htmlFor="username">Username</label>
 
                     <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
 
 
-                    <label for="password">Password</label>
+                    <label htmlFor="password">Password</label>
 
                     <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
 
