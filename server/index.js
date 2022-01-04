@@ -6,6 +6,9 @@ const app = express();
 const sessions = require('express-session');
 const cookieParser = require('cookie-parser');
 
+require("dotenv").config();
+require("./db/db_setup");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -22,18 +25,6 @@ app.use(sessions({
     resave: false
 }))
 
-app.get("/", (req, res) => {
-    session = req.session;
-    if (session.userId) {
-        res.send("Someone is logged in")
-    } else {
-        res.send("No one is logged in")
-    }
-})
-
-
-const username = "username"
-const password = "password"
 
 const {
     loginUser
@@ -46,5 +37,6 @@ app.get("logout", (req, res) => {
     res.status(200).send("Succesfully logged out");
 })
 
+const PORT = process.env.PORT || 4000
 
-app.listen(4000, () => console.log("Server is listening on port 4000"));
+app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
