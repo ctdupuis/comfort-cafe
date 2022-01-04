@@ -1,14 +1,12 @@
-
+const User = require('../models/user');
 
 module.exports = {
-    loginUser: (req, res) => {
-        if (req.body.username === username && req.body.password === password) {
-            session = req.session;
-            session.userId = req.body.username;
-            console.log(req.session);
-            res.status(200).send(`${username} has succesfully logged in`, req.session);
-        } else {
-            res.status(400).send("invalid username or password");
+    getUsers: async(req, res) => {
+        try {
+            const users = await User.find();
+            res.status(200).send(users);
+        } catch (error) {
+            res.status(400).send(error.message);
         }
     }
 }

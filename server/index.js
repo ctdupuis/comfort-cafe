@@ -30,12 +30,7 @@ const {
     loginUser
 } = require("./controllers/session")
 
-app.post("/login", loginUser)
 
-app.get("logout", (req, res) => {
-    req.session.destroy();
-    res.status(200).send("Succesfully logged out");
-})
 
 const PORT = process.env.PORT || 4000
 
