@@ -16,19 +16,11 @@ app.use(cookieParser());
 
 app.use(express.static(__dirname));
 
-const oneDay = 1000 * 60 * 60 * 24;
 
-app.use(sessions({
-    secret: "asldfkjoawruhfou3qrfaslfjkoiwehjf",
-    saveUnitialized: true,
-    cookie: { maxAge: oneDay },
-    resave: false
-}))
+// Routers
+const userRouter = require("./routes/user_routes")
+app.use("/users", userRouter);
 
-
-const {
-    loginUser
-} = require("./controllers/session")
 
 
 
