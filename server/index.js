@@ -16,6 +16,15 @@ app.use(cookieParser());
 
 app.use(express.static(__dirname));
 
+let session = {
+    secret: process.env.SESSION_SECRET,
+    cookie:  { maxAge: 1000 * 60 * 60 },
+    saveUninitialized: false,
+    resave: false
+};
+
+app.use(sessions(session));
+
 
 // Routers
 const userRouter = require("./routes/user_routes")
