@@ -6,11 +6,11 @@ import Home from './components/static/Home';
 import { Route, Redirect } from 'react-router-dom';
 import Menu from './components/menu/Menu';
 import About from './components/static/About';
-import Locations from './components/static/Locations';
 import Careers from './components/careers/Careers';
 import Order from './components/orders/Order';
 import Login from './components/sessions/Login';
 import Register from './components/sessions/Register';
+import Contact from './components/static/Contact';
 
 function App() {
   return (
@@ -38,8 +38,8 @@ function App() {
         render={(props) => <About />}
       />
 
-      <Route exact path={"/locations"}
-        render={(props) => <Locations />}
+      <Route exact path={"/contact"}
+        render={(props) => <Contact />}
       />
 
       <Route exact path={"/careers"}

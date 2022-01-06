@@ -19,8 +19,8 @@ export default function Nav() {
                 </div>
 
                 <div className="nav-item">
-                    <NavLink to={"/locations"}>
-                        Locations
+                    <NavLink to={"/contact"}>
+                        Contact
                     </NavLink>
                 </div>
 
