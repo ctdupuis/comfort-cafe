@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 export default function Newsletter() {
+   
+    
     return (
         <div class="content">
             <header class="content-head">
