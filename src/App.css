@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    padding: 2%;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

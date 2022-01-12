@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/static/Header';
 import Nav from './components/static/Nav';
-import Home from './components/static/Home';
+import Home from './components/static/Home/Home';
 import { Route, Redirect } from 'react-router-dom';
 import Menu from './components/menu/Menu';
 import About from './components/static/About';
@@ -27,7 +27,7 @@ function App() {
         }}
       />
 
-      {/* This renders the Home Page but hopefully only at "/" */}
+      {/* This renders the Home Page but only at "/" */}
       <Route exact path={"/"} component={Home} />
      
       <Route exact path={"/menu"}

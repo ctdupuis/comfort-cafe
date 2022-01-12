@@ -1,0 +1,56 @@
+.content {
+    border: 1px solid var(--d-green);
+    width: 45%;
+}
+
+.content-head {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.title {
+    padding: 5%;
+    font-size: x-large;
+}
+
+.date {
+    padding: 1%;
+    margin-right: 10%;
+    font-size: larger;
+}
+
+.inner-content {
+    padding: 5%;
+}
+
+.img-cont {
+    margin-top: 5%;
+    margin-right: 0;
+    margin-right: 20%;
+    text-align: center;
+}
+
+.calendar {
+    opacity: 0.75;
+    height: 75px;
+}
+
+.food-img {
+    height: 300px;
+    width: 500px;
+}
+
+article-link {
+    text-decoration: none;
+    color: var(--l-green);
+    margin-top: 5%;
+}
+
+.article-link:hover {
+    color: var(--d-green);
+}
+
+p {
+    margin-top: 5%;
+}

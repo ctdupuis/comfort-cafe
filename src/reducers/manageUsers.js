@@ -13,7 +13,7 @@ export default function userReducer(
         case 'LOGOUT_USER':
             return {
                 ...state,
-                currentUser: action.user
+                currentUser: undefined
             };
         default: return state;
     }
