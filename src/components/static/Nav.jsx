@@ -6,6 +6,11 @@ export default function Nav() {
     return (
         <nav>
             <div className="nav-container">
+                <div className="menu-container">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div className="nav-item">
                     <NavLink to={"/"}>
                         Home

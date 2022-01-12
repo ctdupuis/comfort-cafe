@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Special() {
     let date = new Date();
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    let days = ["Sunday", "Monday", "Tuesday", "Wed", "Thursday", "Friday", "Saturday"]
 
     return (
         <div className="content">
