@@ -10,11 +10,6 @@ export default function Nav() {
         setMenuOpen(!menuOpen);
     }
 
-    const toggleObj = {
-        true: "",
-        false: "none"
-    }
-
     return (
         <nav>
             <div className="nav-container">
@@ -24,7 +19,7 @@ export default function Nav() {
                     <span></span>
                     <span></span>
                     {
-                        !menuOpen ? <MobileMenu /> : null
+                        menuOpen ? <MobileMenu /> : null
                     }
                 </div>
                 <div className="nav-item">

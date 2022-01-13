@@ -1,8 +1,9 @@
 .content {
     border: 1px solid var(--d-green);
-    width: 45%;
     box-shadow: 1px 1px 10px black;
     background-color: white;
+    border-radius: 5px;
+    margin: 2% 0;
 }
 
 .content-head {

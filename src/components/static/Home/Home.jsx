@@ -5,7 +5,7 @@ import Newsletter from './Newsletter/Newsletter';
 
 export default function Home() {
     return (
-        <div className="wrapper flex-container" style={{ alignItems: "flex-start"}}>
+        <div className="wrapper flex-container wrapped" style={{ alignItems: "flex-start"}}>
             <Special />
             <Newsletter />
         </div>

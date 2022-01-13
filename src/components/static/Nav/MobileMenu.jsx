@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export default function MobileMenu({ display }) {
+export default function MobileMenu() {
     return (
-        <ul id="menu" style={{display: display}}>
+        <ul id="menu">
             <li>
                 <NavLink to={"/"}>
                     Home
