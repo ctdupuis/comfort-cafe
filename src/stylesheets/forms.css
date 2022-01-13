@@ -15,10 +15,13 @@
 .session-form input {
     width: 50%;
     border-radius: 5px;
+    border: 1px solid var(--d-green);
+    padding: 1%;
 }
 
 .session-form label {
     margin: 1%;
+    color: var(--d-green);
 }
 
 .session-form button {
@@ -30,12 +33,24 @@
     border-radius: 5px;
     border: none;
     padding: 2%;
+    transition: 0.3s ease;
 }
 
 .session-form button:hover {
     cursor: pointer;
     background-color: var(--d-green);
     color: var(--l-green);
+}
+
+svg {
+    margin-top: -19px;
+    margin-right: -113px;
+    border-radius: 10px;
+}
+
+svg:hover {
+    cursor: pointer;
+    background-color: #cdcdcd;
 }
 
 @media only screen and (min-width: 768px) {
@@ -54,15 +69,22 @@
     }
     
     .session-form input {
-        width: 40%;
+        width: 27%;
         border-radius: 5px;
+        padding: .5%;
     }
     
     .session-form label {
-        margin: 1%;
+        margin: 1%; 
     }
     
     .session-form button {
-        margin-top: 2%;
+        margin: 2%;
+        padding: .5%;
+    }
+
+    svg {
+        margin-top: -26px;
+        margin-right: -500px;
     }
 }

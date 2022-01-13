@@ -46,9 +46,9 @@ export default class Login extends Component {
                         />
                         {  
                             this.state.type === "password" ? 
-                            <FaEyeSlash style={{ marginTop: "-19px", marginRight: "-113px"}} onClick={this.handleVisToggle}/>
+                            <FaEyeSlash onClick={this.handleVisToggle}/>
                             :
-                            <FaEye style={{ marginTop: "-19px", marginRight: "-113px"}} onClick={this.handleVisToggle}/>
+                            <FaEye onClick={this.handleVisToggle}/>
                         }
                        
 
