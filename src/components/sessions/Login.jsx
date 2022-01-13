@@ -5,7 +5,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 export default class Login extends Component {
     state = {
-        username: "",
+        email: "",
         password: "",
         type: "password"
     };
@@ -20,7 +20,7 @@ export default class Login extends Component {
         e.preventDefault();
         loginUser(this.state);
         this.setState({
-            username: "",
+            email: "",
             password: ""
         });
     }
@@ -33,11 +33,12 @@ export default class Login extends Component {
         return (
             <div className="wrapper" style={{ textAlign: "center", backgroundColor: "white" }}>
                 <div className="form-cont">
+                <h2 className="form-head">Log in</h2>
                     <form className="session-form" onSubmit={this.handleSubmit} >
 
-                        <label htmlFor="username">Username</label>
+                        <label htmlFor="email">Email</label>
 
-                        <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+                        <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
 
 
                         <label htmlFor="password">Password</label>

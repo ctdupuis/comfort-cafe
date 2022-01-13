@@ -1,3 +1,11 @@
+.form-head {
+    margin: 6%;
+}
+
+.form-sect {
+    margin: 2% 0 0 -40%;
+}
+
 .form-cont {
     border: 1px solid black;
     border-radius: 5px;
@@ -12,11 +20,16 @@
     align-items: center;
 }
 
-.session-form input {
+.session-form input, .session-form select {
     width: 50%;
     border-radius: 5px;
     border: 1px solid var(--d-green);
     padding: 1%;
+    outline: none;
+}
+
+.session-form input:focus {
+    border: 1px solid var(--l-green);
 }
 
 .session-form label {
@@ -54,6 +67,10 @@ svg:hover {
 }
 
 @media only screen and (min-width: 768px) {
+    .form-head {
+        margin: 2%;
+    }
+    
     .form-cont {
         border: 1px solid black;
         border-radius: 5px;
@@ -68,7 +85,7 @@ svg:hover {
         align-items: center;
     }
     
-    .session-form input {
+    .session-form input, .session-form select {
         width: 27%;
         border-radius: 5px;
         padding: .5%;
