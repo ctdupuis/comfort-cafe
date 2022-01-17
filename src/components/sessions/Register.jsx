@@ -45,7 +45,7 @@ export default class Register extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        loginUser(this.state);
+        console.log("submitted", this.state)
         this.setState({
             email: "",
             password: ""
@@ -93,23 +93,23 @@ export default class Register extends Component {
 
                         <label>Date of Birth</label>
 
-                        <input type="date" name="dob"  max={moment().format("YYYY-MM-DD")} onChange={this.handleChange}/>
+                        <input type="date" name="dob"  max={moment().format("YYYY-MM-DD")} value={this.state.dob} onChange={this.handleChange}/>
 
                         <h3 className="form-sect">Address</h3>
 
                         <label htmlFor="street">Street</label>
 
-                        <input type="text" name="address:street" onChange={this.handleChange} />
+                        <input type="text" name="address:street" onChange={this.handleChange} value={this.state.address.street} />
 
                         <label htmlFor="city">City</label>
 
-                        <input type="text" name="address:city" onChange={this.handleChange} />
+                        <input type="text" name="address:city" onChange={this.handleChange} value={this.state.address.city} />
 
                         <label>State</label>    
                         <select name="address:state" onChange={this.handleChange}>{this.populateOptions()}</select>
 
                         <label>Zip</label>
-                        <input type="text" name="address:zip" onChange={this.handleChange} />
+                        <input type="text" name="address:zip" onChange={this.handleChange} value={this.state.address.zip} />
 
                        
 
