@@ -22,6 +22,7 @@ export const register = (userdata) => {
 
     return async (dispatch) => {
         console.log("inside of return dispatch fn")
+        dispatch({ type: 'START_LOAD' })
         const response = await axios.post(`${API_ROOT}/users/register`,
         { 
             username: username,
