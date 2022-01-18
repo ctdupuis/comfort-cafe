@@ -15,6 +15,10 @@ module.exports = {
         res.status(200).send(req.body)
     },
     auth: (req, res) => {
-       
+       if (req.session.user_id) {
+           res.status(200).send({ auth: true })
+       } else {
+           res.status(200).send({ auth: false })
+       }
     }
 }

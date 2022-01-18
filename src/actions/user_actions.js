@@ -14,23 +14,30 @@ export const loginUser = (userdata) => {
     }
 }
 
-export const register = (userdata) => {
-    let {
-        username, password, address, name, dob
-    } = userdata;
-    console.log("top level of register fn", userdata)
+// export const register = (userdata) => {
+//     return async (dispatch) => {
+//         console.log("inside of return dispatch fn")
+//         dispatch({ type: 'START_LOAD' })
+//         const response = await axios.post(`${API_ROOT}/users/register`,
+//         { 
+//             userdata
+//         }, { withCredentials: true })
+//         console.log(response.data)
+//     }
+// }
 
+export const register = async (userdata, dispatch) => {
+    dispatch({ type: 'START_LOAD' })
+    const response = await axios.post(`${API_ROOT}/users/register`, {userdata}, {withCredentials:true})
+    console.log(response.data)
+}
+
+export const authStatus = () => {
     return async (dispatch) => {
-        console.log("inside of return dispatch fn")
         dispatch({ type: 'START_LOAD' })
-        const response = await axios.post(`${API_ROOT}/users/register`,
-        { 
-            username: username,
-            password: password,
-            dob: dob,
-            address: address,
-            name: name
-        })
-        debugger
+        const response = await axios.get(`${API_ROOT}/users/auth`, { withCredentials: true })
+        const data = response.data
+        console.log(data)
+        dispatch({ type: 'END_LOAD'})
     }
 }

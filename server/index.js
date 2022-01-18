@@ -9,9 +9,15 @@ const cookieParser = require('cookie-parser');
 require("dotenv").config();
 require("./db/db_setup");
 
+let corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200,
+    methods: "GET, POST, PUT, DELETE"
+};
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(cookieParser());
 
 app.use(express.static(__dirname));

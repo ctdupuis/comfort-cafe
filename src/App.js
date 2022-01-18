@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/static/Header';
 import Nav from './components/static/Nav';
@@ -11,11 +11,15 @@ import Order from './components/orders/Order';
 import Login from './components/sessions/Login';
 import Register from './components/sessions/Register';
 import Contact from './components/static/Contact';
-import { register } from './actions/user_actions'
+import { register, authStatus } from './actions/user_actions'
 
 import { connect } from 'react-redux';
 
-function App() {
+function App({ register, authStatus }) {
+  useEffect(() => {
+    authStatus()
+  }, [])
+
   return (
     <div className="App">
       {/* This renders the Header and Nav components */}
@@ -68,10 +72,12 @@ function App() {
 }
 
 export default connect(
-  (state) => ({
+  state => ({
     currentUser: state.userReducer.currentUser,
-    loading: state.loadReducer.loading
-  }), {
-    register
+    loading: state.loading
+  }),
+  {
+    register,
+    authStatus
   }
 )(App);
