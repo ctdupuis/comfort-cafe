@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { loginUser } from '../../actions/users';
+import { loginUser } from '../../actions/user_actions';
 import "../../stylesheets/forms.css"
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 

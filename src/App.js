@@ -11,6 +11,9 @@ import Order from './components/orders/Order';
 import Login from './components/sessions/Login';
 import Register from './components/sessions/Register';
 import Contact from './components/static/Contact';
+import { register } from './actions/user_actions'
+
+import { connect } from 'react-redux';
 
 function App() {
   return (
@@ -57,11 +60,17 @@ function App() {
 
 
       <Route exact path={"/register"}
-        render={props => <Register />}
+        render={props => <Register register={register} {...props} />}
       />
       
     </div>
   );
 }
 
-export default App;
+export default connect(
+  (state) => ({
+    currentUser: state.currentUser
+  }), {
+    register
+  }
+)(App);

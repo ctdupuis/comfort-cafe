@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const bcrypt = require('bcrypt');
 
 module.exports = {
     getUsers: async(req, res) => {
@@ -8,5 +9,12 @@ module.exports = {
         } catch (error) {
             res.status(400).send(error.message);
         }
+    },
+    register: (req, res) => {
+        const salt = bcrypt.genSaltSync(10);
+        res.status(200).send(req.body)
+    },
+    auth: (req, res) => {
+       
     }
 }
