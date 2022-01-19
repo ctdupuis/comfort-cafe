@@ -74,7 +74,7 @@ function App({ register, authStatus }) {
 export default connect(
   state => ({
     currentUser: state.userReducer.currentUser,
-    loading: state.loading
+    loading: state.loadReducer.loading
   }),
   {
     register,

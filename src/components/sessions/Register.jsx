@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { loginUser } from '../../actions/user_actions';
 import "../../stylesheets/forms.css";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import moment from 'moment';
@@ -45,7 +44,9 @@ export default class Register extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.register(this.state)
+        let postObj = {...this.state};
+        delete postObj.type;
+        this.props.register(postObj);
         this.setState({
             email: "",
             password: "",
@@ -75,13 +76,12 @@ export default class Register extends Component {
                     <form className="session-form" onSubmit={this.handleSubmit} >
 
                         <h3 className="form-sect">Personal Info</h3>
-                        <label htmlFor="email">Email</label>
 
-                        <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
+                        <label htmlFor="email">Email</label>
+                        <input type="email" name="email" value={this.state.email} onChange={this.handleChange} />
 
 
                         <label htmlFor="password">Password</label>
-
                         <input type={this.state.type} name="password" value={this.state.password} onChange={this.handleChange} 
                         />
 
@@ -118,7 +118,7 @@ export default class Register extends Component {
                         <select name="address:state" onChange={this.handleChange}>{this.populateOptions()}</select>
 
                         <label>Zip</label>
-                        <input type="text" name="address:zip" onChange={this.handleChange} value={this.state.address.zip} />
+                        <input type="text" name="address:zip" onChange={this.handleChange} value={this.state.address.zip} maxLength={5} />
 
                        
 
