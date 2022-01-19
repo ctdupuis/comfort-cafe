@@ -28,7 +28,7 @@ export const loginUser = (userdata) => {
 
 export const register = async (userdata, dispatch) => {
     dispatch({ type: 'START_LOAD' })
-    const response = await axios.post(`${API_ROOT}/users/register`, {userdata}, {withCredentials:true})
+    const response = await axios.post(`${API_ROOT}/users/register`, { userdata }, { withCredentials: true })
     console.log(response.data)
 }
 

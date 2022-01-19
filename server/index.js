@@ -10,14 +10,15 @@ require("dotenv").config();
 require("./db/db_setup");
 
 let corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3000', 'https://comfort-cafe.herokuapp.com'],
     optionsSuccessStatus: 200,
-    methods: "GET, POST, PUT, DELETE"
+    methods: ["GET, POST, PUT, DELETE"],
+    credentials: true
 };
 
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors(corsOptions));
 app.use(cookieParser());
 
 app.use(express.static(__dirname));
