@@ -1,5 +1,9 @@
-const User = require('../models/user');
+require('dotenv').config();
 const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
+const User = require('../models/user');
+const db = mongoose.createConnection(process.env.CONNECTION_URL);
+
 
 module.exports = {
     getUsers: async(req, res) => {
@@ -10,10 +14,14 @@ module.exports = {
             res.status(400).send(error.message);
         }
     },
-    register: (req, res) => {
+    register: async(req, res) => {
+        const userObject = req.body.userdata;
         const salt = bcrypt.genSaltSync(10);
-        // create new user, push userID to session[userID]
-        res.status(200).send(req.body)
+        const securePassword = bcrypt.hashSync(userObject.password, salt);
+        userObject.password = securePassword;
+        const newUser = new User(userObject);
+        const createdUser = await db.collection('users').insertOne(newUser).catch(err => console.log(err))
+        res.status(200).send(createdUser);
     },
     auth: (req, res) => {
        if (req.session.user_id) {

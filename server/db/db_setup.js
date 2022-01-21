@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 
 const startDB = async () => {
-	const MONGO_USER = process.env.MONGO_USER;
-	const MONGO_SECRET = process.env.MONGO_SECRET;
-	const CONNECTION_URL = `mongodb+srv://${MONGO_USER}:${MONGO_SECRET}@cluster0.0ani2.mongodb.net/cafe?retryWrites=true&w=majority`
+	// const MONGO_USER = process.env.MONGO_USER;
+	// const MONGO_SECRET = process.env.MONGO_SECRET;
+	// const CONNECTION_URL = `mongodb+srv://${MONGO_USER}:${MONGO_SECRET}@cluster0.0ani2.mongodb.net/cafe?retryWrites=true&w=majority`
+	const CONNECTION_URL = process.env.CONNECTION_URL;
 	try {
 		await mongoose.connect(CONNECTION_URL, {
 			useNewUrlParser: true,
