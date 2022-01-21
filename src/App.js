@@ -15,7 +15,7 @@ import { register, authStatus } from './actions/user_actions'
 
 import { connect } from 'react-redux';
 
-function App({ register, authStatus }) {
+function App({ register, authStatus, currentUser }) {
   useEffect(() => {
     authStatus()
   }, [])

@@ -22,7 +22,7 @@ export const register = (userdata) => {
             userdata
         }, { withCredentials: true })
         const user = response.data.userdata;
-        console.log(user)
+        dispatch({ type: 'LOGIN_USER', payload: user })
         dispatch({ type: 'END_LOAD' })
     }
 }

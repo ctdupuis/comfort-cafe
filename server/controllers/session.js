@@ -12,6 +12,7 @@ module.exports = {
     },
     register: (req, res) => {
         const salt = bcrypt.genSaltSync(10);
+        // create new user, push userID to session[userID]
         res.status(200).send(req.body)
     },
     auth: (req, res) => {
@@ -20,5 +21,8 @@ module.exports = {
        } else {
            res.status(200).send({ auth: false })
        }
+    },
+    logout: (req, res) => {
+
     }
 }

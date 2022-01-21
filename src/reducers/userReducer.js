@@ -1,6 +1,6 @@
 export default function userReducer(
     state = {
-        currentUser: undefined
+        currentUser: false
     },
     action
 ) {
@@ -8,7 +8,7 @@ export default function userReducer(
         case 'LOGIN_USER':
             return {
                 ...state,
-                currentUser: action.user
+                currentUser: action.payload
             };
         case 'LOGOUT_USER':
             return {
