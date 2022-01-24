@@ -2,12 +2,9 @@ import axios from 'axios';
 import { API_ROOT } from '../constants';
 
 export const login = (userdata, history) => {
-    let { username, password } = userdata;
-
     return async (dispatch) => {
-        const response = await axios.post(`${API_ROOT}/login`, {
-            username: username,
-            password: password
+        const response = await axios.post(`${API_ROOT}/users/login`, {
+            userdata
         }, { withCredentials: true });
         const user = response.data
         console.log(user)
@@ -34,9 +31,14 @@ export const authStatus = () => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.get(`${API_ROOT}/users/auth`, { withCredentials: true });
-        const data = response.data
-        console.log("auth response:", data)
-        dispatch({ type: 'END_LOAD'})
+        const user = response.data.auth;
+        if (user.auth) {
+            dispatch({ type: 'END_LOAD' })
+        } else {
+            dispatch({ type: 'LOGIN_USER', payload: user })
+            dispatch({ type: 'END_LOAD' })
+        }
+        
     }
 }
 
@@ -45,5 +47,8 @@ export const logout = (history) => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.get(`${API_ROOT}/users/logout`);
         const data = response.data;
+        dispatch({ type: 'LOGOUT_USER' })
+        dispatch({ type: 'END_LOAD' })
+        history.replace("/")
     }
 }

@@ -11,11 +11,11 @@ import Order from './components/orders/Order';
 import Login from './components/sessions/Login';
 import Register from './components/sessions/Register';
 import Contact from './components/static/Contact';
-import { register, authStatus, login } from './actions/user_actions';
+import { register, authStatus, login, logout } from './actions/user_actions';
 
 import { connect } from 'react-redux';
 
-function App({ register, authStatus, currentUser, login }) {
+function App({ register, authStatus, currentUser, login, logout }) {
   useEffect(() => {
     authStatus()
   }, [])
@@ -27,7 +27,8 @@ function App({ register, authStatus, currentUser, login }) {
         render={(props) => {
           return (
             <>
-              <Header currentUser={currentUser} />
+              <Header currentUser={currentUser} logout={logout}
+              {...props} />
               <Nav />
             </>
           )
@@ -79,6 +80,7 @@ export default connect(
   {
     register,
     authStatus,
-    login
+    login,
+    logout
   }
 )(App);
