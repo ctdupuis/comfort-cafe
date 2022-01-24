@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const User = require('../models/user');
 const db = mongoose.createConnection(process.env.CONNECTION_URL);
-
+const salt = bcrypt.genSaltSync(10);
 
 module.exports = {
     getUsers: async(req, res) => {
@@ -15,13 +15,15 @@ module.exports = {
         }
     },
     register: async(req, res) => {
-        const userObject = req.body.userdata;
-        const salt = bcrypt.genSaltSync(10);
+        const userObject = Object.assign({}, req.body.userdata);
         const securePassword = bcrypt.hashSync(userObject.password, salt);
         userObject.password = securePassword;
         const newUser = new User(userObject);
-        const createdUser = await db.collection('users').insertOne(newUser).catch(err => console.log(err))
-        res.status(200).send(createdUser);
+        const insertion = await db.collection('users').insertOne(newUser)
+        .catch(err => res.status(400).send(err))
+        const createdUser = await db.collection('users').findOne({ _id: insertion.insertedId })
+        delete createdUser.password
+        res.status(200).send(createdUser)
     },
     auth: (req, res) => {
        if (req.session.user_id) {
@@ -31,6 +33,7 @@ module.exports = {
        }
     },
     logout: (req, res) => {
-
+        req.session.destroy();
+        res.status(200).send("Log out success")
     }
 }

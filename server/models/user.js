@@ -11,12 +11,16 @@ const UserSchema = new Schema({
           sparse: true
         }
     },
+    password: {
+        type: String,
+        required: true
+    },
     name: {
         first: String,
         last: String
     },
     admin: {
-        type: String,
+        type: Boolean,
         required: true,
         default: false
     },

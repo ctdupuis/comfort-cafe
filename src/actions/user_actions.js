@@ -21,7 +21,8 @@ export const register = (userdata) => {
         { 
             userdata
         }, { withCredentials: true })
-        const user = response.data.userdata;
+        const user = response.data;
+        debugger
         dispatch({ type: 'LOGIN_USER', payload: user })
         dispatch({ type: 'END_LOAD' })
     }
@@ -32,7 +33,7 @@ export const authStatus = () => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.get(`${API_ROOT}/users/auth`, { withCredentials: true })
         const data = response.data
-        console.log(data)
+        console.log("auth response:", data)
         dispatch({ type: 'END_LOAD'})
     }
 }

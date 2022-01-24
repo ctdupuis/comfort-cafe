@@ -17,7 +17,7 @@
 
 [] existing users can log in and out
 
-[] auth endpoint to check if someone's logged in
+[x] auth endpoint to check if someone's logged in
 
 [] different authorization front end blocks/permissions
 
