@@ -7,7 +7,6 @@ export const login = (userdata, history) => {
             userdata
         }, { withCredentials: true });
         const user = response.data
-        console.log(user)
         dispatch({ type: 'LOGIN_USER', payload: user });
         history.replace("/");
     }
