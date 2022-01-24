@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import Header from './components/static/Header';
+import Header from './components/static/Header/Header';
 import Nav from './components/static/Nav/Nav';
 import Home from './components/static/Home/Home';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Menu from './components/menu/Menu';
 import About from './components/static/About';
 import Careers from './components/careers/Careers';
@@ -11,11 +11,11 @@ import Order from './components/orders/Order';
 import Login from './components/sessions/Login';
 import Register from './components/sessions/Register';
 import Contact from './components/static/Contact';
-import { register, authStatus } from './actions/user_actions'
+import { register, authStatus, login } from './actions/user_actions';
 
 import { connect } from 'react-redux';
 
-function App({ register, authStatus, currentUser }) {
+function App({ register, authStatus, currentUser, login }) {
   useEffect(() => {
     authStatus()
   }, [])
@@ -59,7 +59,7 @@ function App({ register, authStatus, currentUser }) {
 
 
       <Route exact path={"/login"}
-        render={props => <Login {...props} />}
+        render={props => <Login login={login} {...props} />}
       />
 
 
@@ -78,6 +78,7 @@ export default connect(
   }),
   {
     register,
-    authStatus
+    authStatus,
+    login
   }
 )(App);

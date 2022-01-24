@@ -6,12 +6,15 @@ const db = mongoose.createConnection(process.env.CONNECTION_URL);
 const salt = bcrypt.genSaltSync(10);
 
 module.exports = {
-    getUsers: async(req, res) => {
-        try {
-            const users = await User.find();
-            res.status(200).send(users);
-        } catch (error) {
-            res.status(400).send(error.message);
+    login: async(req, res) => {
+        const { email, password } = req.body.userdata;
+        const user = await db.collection('users').findOne({email: email})
+        console.log(email, typeof email)
+        const authenticated = bcrypt.compareSync(password, user.password);
+        if (authenticated) {
+            res.status(200).send(user)
+        } else {
+            res.status(400).send({ alert: "Invalid username or password"})
         }
     },
     register: async(req, res) => {
@@ -20,10 +23,10 @@ module.exports = {
         userObject.password = securePassword;
         const newUser = new User(userObject);
         const insertion = await db.collection('users').insertOne(newUser)
-        .catch(err => res.status(400).send(err))
-        const createdUser = await db.collection('users').findOne({ _id: insertion.insertedId })
-        delete createdUser.password
-        res.status(200).send(createdUser)
+        .catch(err => res.status(400).send(err));
+        const createdUser = await db.collection('users').findOne({ _id: insertion.insertedId });
+        delete createdUser.password;
+        res.status(200).send(createdUser);
     },
     auth: (req, res) => {
        if (req.session.user_id) {

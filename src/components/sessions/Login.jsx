@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { loginUser } from '../../actions/user_actions';
-import "../../stylesheets/forms.css"
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import "../../stylesheets/forms.css";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default class Login extends Component {
     state = {
@@ -18,7 +17,7 @@ export default class Login extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        loginUser(this.state);
+        this.props.login(this.state, this.props.history);
         this.setState({
             email: "",
             password: ""

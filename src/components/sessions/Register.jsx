@@ -46,7 +46,7 @@ export default class Register extends Component {
         e.preventDefault();
         let postObj = {...this.state};
         delete postObj.type;
-        this.props.register(postObj);
+        this.props.register(postObj, this.props.history);
         this.setState({
             email: "",
             password: "",

@@ -13,7 +13,7 @@ export default function userReducer(
         case 'LOGOUT_USER':
             return {
                 ...state,
-                currentUser: undefined
+                currentUser: false
             };
         default: return state;
     }
