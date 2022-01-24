@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../../stylesheets/nav.css';
+import '../../../stylesheets/nav.css';
 import { NavLink } from 'react-router-dom';
-import MobileMenu from './Nav/MobileMenu';
+import MobileMenu from './MobileMenu';
 
 export default function Nav() {
     const [menuOpen, setMenuOpen] = useState(false);

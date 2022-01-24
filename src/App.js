@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/static/Header';
-import Nav from './components/static/Nav';
+import Nav from './components/static/Nav/Nav';
 import Home from './components/static/Home/Home';
 import { Route, Redirect } from 'react-router-dom';
 import Menu from './components/menu/Menu';
@@ -27,7 +27,7 @@ function App({ register, authStatus, currentUser }) {
         render={(props) => {
           return (
             <>
-              <Header />
+              <Header currentUser={currentUser} />
               <Nav />
             </>
           )
