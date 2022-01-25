@@ -7,7 +7,6 @@ const sessions = require('express-session');
 const cookieParser = require('cookie-parser');
 
 require("dotenv").config();
-require("./db/db_setup");
 
 let corsOptions = {
     origin: ['http://localhost:3000', 'https://comfort-cafe.herokuapp.com'],

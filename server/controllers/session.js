@@ -40,6 +40,6 @@ module.exports = {
     },
     logout: (req, res) => {
         req.session.destroy();
-        res.status(200).send("Log out success")
+        res.status(200).send({alert: "Logged out successfully"})
     }
 }
