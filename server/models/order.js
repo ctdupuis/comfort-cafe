@@ -1,6 +1,6 @@
-const { Schema } = require('mongoose');
+const mongoose, { Schema } = require('mongoose');
 const ObjectId = Schema.ObjectId;
-const mongoose = require('mongoose');
+
 
 const OrderSchema = new Schema({
     date: {

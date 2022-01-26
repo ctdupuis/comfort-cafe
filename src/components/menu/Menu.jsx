@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 export default function Menu() {
     return (
-        <div>
+        <div className="wrapper">
             This is the Menu Page
         </div>
     )
