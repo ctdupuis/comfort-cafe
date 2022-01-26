@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/static/Header/Header';
 import Nav from './components/static/Nav/Nav';
@@ -39,7 +39,7 @@ function App({ register, authStatus, currentUser, login, logout }) {
       <Route exact path={"/"} component={Home} />
      
       <Route exact path={"/menu"}
-        render={(props) => <Menu />}
+        render={(props) => <Menu {...props} />}
       />
 
       <Route exact path={"/about"}

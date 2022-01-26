@@ -11,7 +11,7 @@ const ItemSchema = new Schema({
         }
     },
     price: {
-        type: Decimal128,
+        type: Number,
         required: true
     },
     categories: {
