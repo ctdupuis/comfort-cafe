@@ -11,11 +11,14 @@ import Order from './components/orders/Order';
 import Login from './components/sessions/Login';
 import Register from './components/sessions/Register';
 import Contact from './components/static/Contact';
+
+// actions
 import { register, authStatus, login, logout } from './actions/user_actions';
+import { getItems } from './actions/item_actions';
 
 import { connect } from 'react-redux';
 
-function App({ register, authStatus, currentUser, login, logout }) {
+function App({ register, authStatus, currentUser, login, logout, getItems }) {
   useEffect(() => {
     authStatus()
   }, [])
@@ -39,7 +42,7 @@ function App({ register, authStatus, currentUser, login, logout }) {
       <Route exact path={"/"} component={Home} />
      
       <Route exact path={"/menu"}
-        render={(props) => <Menu {...props} />}
+        render={(props) => <Menu getItems={getItems} {...props} />}
       />
 
       <Route exact path={"/about"}
@@ -75,12 +78,14 @@ function App({ register, authStatus, currentUser, login, logout }) {
 export default connect(
   state => ({
     currentUser: state.userReducer.currentUser,
-    loading: state.loadReducer.loading
+    loading: state.loadReducer.loading,
+    items: state.itemsReducer.items
   }),
   {
     register,
     authStatus,
     login,
-    logout
+    logout,
+    getItems
   }
 )(App);

@@ -5,7 +5,8 @@ const db = mongoose.createConnection(process.env.CONNECTION_URL);
 
 module.exports = {
     getItems: async(req, res) => {
-        const items = await Item.find();
+        // const items = await Item.find({});
+        const items = await db.collection('items').find({});
         res.status(200).send(items);
     }
 }
