@@ -79,7 +79,8 @@ export default connect(
   state => ({
     currentUser: state.userReducer.currentUser,
     loading: state.loadReducer.loading,
-    items: state.itemReducer.items
+    items: state.itemReducer.items,
+    alert: state.alertReducer.alert
   }),
   {
     register,
