@@ -18,9 +18,13 @@ import { getItems } from './actions/item_actions';
 
 import { connect } from 'react-redux';
 
-function App({ register, authStatus, currentUser, login, logout, getItems }) {
+function App({
+   register, authStatus, currentUser, login, logout, getItems, items
+  }) 
+  {
+  
   useEffect(() => {
-    authStatus()
+    authStatus();
   }, [])
 
   return (
@@ -42,7 +46,7 @@ function App({ register, authStatus, currentUser, login, logout, getItems }) {
       <Route exact path={"/"} component={Home} />
      
       <Route exact path={"/menu"}
-        render={(props) => <Menu getItems={getItems} {...props} />}
+        render={(props) => <Menu getItems={getItems} items={items} {...props} />}
       />
 
       <Route exact path={"/about"}

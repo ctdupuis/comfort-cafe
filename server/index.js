@@ -6,6 +6,9 @@ const app = express();
 const sessions = require('express-session');
 const cookieParser = require('cookie-parser');
 
+const { db } = require('./db/connection.js')
+db();
+
 require("dotenv").config();
 
 let corsOptions = {
