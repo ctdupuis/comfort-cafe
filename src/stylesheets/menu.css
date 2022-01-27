@@ -1,0 +1,7 @@
+.active {
+    color: var(--l-green);
+}
+
+.inactive {
+    color: var(--d-green);
+}

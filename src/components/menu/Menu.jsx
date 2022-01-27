@@ -1,28 +1,36 @@
 import React, { useEffect, useState } from 'react';
+import "../../stylesheets/menu.css"
 
 export default function Menu({ getItems, items }) {
-    
-    const [menuItems, setMenuItems] = useState(items);
+
+    const [currentCat, setCurrentCat] = useState("specials");
 
     useEffect(() => {
         getItems();
     }, [])
 
-    let categories, uniqCategories;
-
-    const handleCategories = items => {
-        if (items.length > 1) {
-            categories = items.map(item => item.categories).flat(1).filter((item, pos, self) => self.indexOf(item) == pos)
-            return categories
-        } else {
-            return <div>Loading...</div>
-        }
+    const classHandler = {
+        true: "active",
+        false: "inactive"
     }
 
+    const handleClick = e => {
+        setCurrentCat(e.target.innerText);   
+    }
+
+    const categories = items.length > 0 ? items.map(item => item.categories).flat(1).filter((item, pos, self) => self.indexOf(item) === pos) : null
+
+    const headers = categories ? categories.map((cat, idx) => {
+        return(
+        <div onClick={handleClick} key={idx} className={classHandler[currentCat === cat]}>
+            {cat}
+        </div>
+        )
+    }) : null
 
     return (
-        <div className="wrapper">
-            {handleCategories(items)}
+        <div className="wrapper flex-container">
+            {headers}
         </div>
     )
 }
