@@ -11,7 +11,7 @@ const ItemSchema = new Schema({
         }
     },
     price: {
-        type: Number,
+        type: Schema.Types.Mixed,
         required: true
     },
     categories: {

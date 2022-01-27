@@ -6,7 +6,7 @@ export const getItems = () => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.get(`${API_ROOT}/items`)
         const items = response.data;
-        console.log(items)
+        dispatch({ type: 'STORE_ITEMS', payload: items })
         dispatch({ type: 'END_LOAD' })
     }
 }
