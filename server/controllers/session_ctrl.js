@@ -1,8 +1,6 @@
 require('dotenv').config();
 const bcrypt = require('bcrypt');
-const mongoose = require('mongoose');
 const User = require('../models/user');
-const db = mongoose.createConnection(process.env.CONNECTION_URL);
 const salt = bcrypt.genSaltSync(10);
 
 module.exports = {

@@ -17,6 +17,10 @@ const ItemSchema = new Schema({
     categories: {
         type: Array,
         required: true
+    },
+    description: {
+        type: String,
+        required: true
     }
 })
 
