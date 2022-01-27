@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Menu({ getItems }) {
-    const [items, setItems] = useState([]);
+export default function Menu({ getItems, items }) {
     
     useEffect(() => {
         getItems();
-    }, items)
+    }, [])
 
     return (
         <div className="wrapper">
