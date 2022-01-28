@@ -1,9 +1,4 @@
-.container {
-    display: flex;
-    padding: 1%;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .wrapper {
     padding: 2%;
@@ -15,6 +10,10 @@
 
 .strict-flex {
     display: flex;
+}
+
+.center {
+    align-items: center;
 }
 
 .space-even {
@@ -31,23 +30,4 @@
 
 .wrapped {
     flex-wrap: wrap;
-}
-
-@media only screen and (min-width: 768px) {
-    .container {
-        display: flex;
-        padding: 1%;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .wrapper {
-        padding: 2%;
-    }
-    
-    .flex-container {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
 }

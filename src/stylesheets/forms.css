@@ -9,7 +9,6 @@
 .form-cont {
     border: 1px solid black;
     border-radius: 5px;
-    background-color: whitesmoke;
     padding: 5%;
     box-shadow: 1px 1px 10px black;
 }
@@ -26,10 +25,12 @@
     border: 1px solid var(--d-green);
     padding: 1%;
     outline: none;
+    background-color: whitesmoke;
 }
 
 .session-form input:focus {
     border: 1px solid var(--l-green);
+    background-color: white;
 }
 
 .session-form label {
@@ -74,7 +75,6 @@ svg:hover {
     .form-cont {
         border: 1px solid black;
         border-radius: 5px;
-        background-color: whitesmoke;
         padding: 0;
         box-shadow: 1px 1px 10px black;
     }

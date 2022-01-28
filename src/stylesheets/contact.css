@@ -1,0 +1,61 @@
+.contact-cont {
+    box-shadow: 1px 1px 10px black;
+    background-color: white;
+    margin: 2% 0;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact-title {
+    padding: 4%;
+}
+
+.contact-title h2 {
+    color: var(--d-green);
+}
+
+.contact-content {
+    padding: 1%;
+}
+
+.day {
+    color: var(--l-green);
+    margin-bottom: 3%;
+}
+
+.c-info {
+    color: var(--l-green);
+    margin-bottom: 3%;
+}
+
+@media only screen and (min-width: 768px) {
+    .contact-cont {
+        box-shadow: 1px 1px 10px black;
+        background-color: white;
+        margin: 2% 0;
+        border-radius: 5px;
+        width: 45%;
+    }
+    
+    .contact-title {
+        padding: 4%;
+    }
+    
+    .contact-title h2 {
+        color: var(--d-green);
+    }
+    
+    .contact-content {
+        padding: 1%;
+    }
+    
+    .day {
+        color: var(--l-green);
+        margin-bottom: 3%;
+    }
+    
+    .c-info {
+        color: var(--l-green);
+        margin-bottom: 6%;
+    }
+}
