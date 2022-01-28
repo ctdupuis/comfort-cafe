@@ -7,13 +7,10 @@
 
 .wrapper {
     padding: 2%;
-    background-color: whitesmoke;
 }
 
 .flex-container {
     display: flex;
-    /* justify-content: space-evenly;
-    align-items: center; */
 }
 
 .strict-flex {
@@ -46,7 +43,6 @@
     
     .wrapper {
         padding: 2%;
-        background-color: whitesmoke;
     }
     
     .flex-container {
