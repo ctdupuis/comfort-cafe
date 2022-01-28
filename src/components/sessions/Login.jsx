@@ -28,6 +28,7 @@ export default class Login extends Component {
         this.state.type === "password" ? this.setState({ ...this.state, type: "text"}) : this.setState({ ...this.state, type: "password"})
     }
 
+    
     render() {
         return (
             <div className="wrapper" style={{ textAlign: "center", backgroundColor: "white" }}>

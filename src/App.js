@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Header from './components/static/Header/Header';
 import Nav from './components/static/Nav/Nav';
 import Home from './components/static/Home/Home';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import Menu from './components/menu/Menu';
 import About from './components/static/About';
 import Careers from './components/careers/Careers';
@@ -67,12 +67,20 @@ function App({
 
 
       <Route exact path={"/login"}
-        render={props => <Login login={login} {...props} />}
+        render={props => !currentUser ?
+        <Login login={login} {...props} />
+          :
+        <Redirect to={"/"} />
+        }
       />
 
 
       <Route exact path={"/register"}
-        render={props => <Register register={register} {...props} />}
+        render={props => !currentUser ?
+        <Register register={register} {...props} />
+          :
+        <Redirect to={"/"} />
+        }
       />
       
     </div>
