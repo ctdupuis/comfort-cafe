@@ -1,10 +1,10 @@
 #  Top Level Goals
 
-[] authentication
+[x] authentication
 
 [] online ordering
 
-[] responsive design
+[~] responsive design
 
 [] applying to positions
 
@@ -13,15 +13,19 @@
 
 [x] set up express-session
 
-[] create users and create new session
+[x] create users and create new session
 
-[] existing users can log in and out
+[x] existing users can log in and out
 
 [x] auth endpoint to check if someone's logged in
 
-[] different authorization front end blocks/permissions
+[~] different authorization front end blocks/permissions
 
 ## Ordering
+
+[] Order model tied to User model
+
+[] Order_History model tied to User model
 
 [] style ordering page, scaling from mobile upwards
 
@@ -37,25 +41,25 @@
 
 ## Design
 
-[] fix the eyeball icon to be within the password field on **all screens**
-
 [x] home page
 
 [x] register page
 
 [x] login page
 
-[] menu page
+[x] menu page
 
 [] order page
 
-[] applications page
+[] careers page
 
-[] contact page
+[x] contact page
 
-[] about us page
+[x] about us page
 
 ## Careers
+
+[] Application model
 
 [] list of positions to apply to
 
@@ -64,3 +68,9 @@
 [] clicking a position brings up a form component
 
 [?] on form submit, send an email to a dummy inbox informing that it's completed
+
+## Known Issues
+
+[] fix the eyeball icon to be within the password field on **all screens**
+
+[] fix MobileMenu hamburger icon to stay on screen after click
