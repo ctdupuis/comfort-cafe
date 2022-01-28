@@ -5,7 +5,7 @@ export default function MenuItem({ item }) {
     <div className="item-cont">
         <div className="strict-flex space-even">
             <div className="item-name">{item.name}</div>
-            <div>${item.price["$numberDecimal"]}</div>
+            <div className="item-price">${item.price["$numberDecimal"]}</div>
         </div>
         <div className="item-desc">
             {item.description}

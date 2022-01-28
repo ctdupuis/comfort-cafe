@@ -1,11 +1,12 @@
-.cat-cont {
+#cat-cont {
     padding: 2%;
     margin-bottom: 2%;
     overflow-x: scroll;
+    display: flex;
 }
 
-.cat-cont div {
-    margin-right: 1%;
+#cat-cont div {
+    margin-right: 3%;
 }
 
 .active {
@@ -27,7 +28,63 @@
     font-size: larger;
 }
 
+.item-price{
+    font-size: larger;
+}
+
 .item-desc {
     font-size: smaller;
     padding: 2%;
+}
+
+@media only screen and (min-width: 768px) {
+    #cat-cont {
+        padding: 2%;
+        margin-bottom: 2%;
+        overflow-x: scroll;
+        border: 1px solid var(--d-green);
+        justify-content: space-evenly;
+        display: flex;
+    }
+    
+    #cat-cont div {
+        margin-right: 1%;
+    }
+    
+    .active {
+        color: var(--l-green);
+    }
+    
+    .inactive {
+        color: var(--d-green);
+    }
+
+    .active:hover, .inactive:hover {
+        cursor: pointer;
+    }
+
+    .inactive:hover {
+        color: var(--l-green);
+    }
+    
+    .item-cont {
+        padding: 1%;
+        border: 1px solid var(--d-green);
+        margin: 1% 0;
+        box-shadow: 1px 1px 10px black;
+        width: 95%;
+    }
+    
+    .item-name {
+        font-size: xx-large;
+    }
+
+    .item-price{
+        font-size: larger;
+    }
+    
+    .item-desc {
+        font-size: larger;
+        padding: 2%;
+    }
 }

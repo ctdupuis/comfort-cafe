@@ -40,12 +40,12 @@ export default function Menu({ getItems, items }) {
 
     return (
         <>
-            <div style={{justifyContent:"flex-start"}} className="flex-container cat-cont">
+            <div id="cat-cont">
                 {headers}
             </div>
             <div style={{flexDirection: "column"}} className="flex-container">
                 {menu}
             </div>
-    </>
+        </>
     )
 }

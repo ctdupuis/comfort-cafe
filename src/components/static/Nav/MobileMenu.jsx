@@ -15,22 +15,22 @@ export default function MobileMenu() {
                 </NavLink>
             </li>
             <li>
-                <NavLink to={"/menu"}>
+                <NavLink to={"/contact"}>
                     Contact
                 </NavLink>
             </li>
             <li>
-                <NavLink to={"/menu"}>
+                <NavLink to={"/order"}>
                     Order
                 </NavLink>
             </li>
             <li>
-                <NavLink to={"/menu"}>
+                <NavLink to={"/about"}>
                     About us
                 </NavLink>
             </li>
             <li>
-                <NavLink to={"/menu"}>
+                <NavLink to={"/careers"}>
                     Careers
                 </NavLink>
             </li>
