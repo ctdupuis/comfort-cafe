@@ -1,3 +1,13 @@
+.cat-cont {
+    padding: 2%;
+    margin-bottom: 2%;
+    overflow-x: scroll;
+}
+
+.cat-cont div {
+    margin-right: 1%;
+}
+
 .active {
     color: var(--l-green);
 }
@@ -9,4 +19,15 @@
 .item-cont {
     padding: 1%;
     border: 1px solid var(--d-green);
+    margin: 1% 0;
+    box-shadow: 1px 1px 10px black;
+}
+
+.item-name {
+    font-size: larger;
+}
+
+.item-desc {
+    font-size: smaller;
+    padding: 2%;
 }
