@@ -23,6 +23,7 @@
     margin-bottom: 4%;
     padding: 1%;
     color: var(--d-green);
+
 }
 
 .about-title h3 {
@@ -34,5 +35,44 @@
 }
 
 @media only screen and (min-width: 768px) {
+    .about-bg {
+        position: relative; 
+        height: 100vh;
+        width: 100%;
+    }
+    
+    .about-bg::before {
+        content: "";
+        background-image: url("../stylesheets/images/icon\ copy.png");
+        min-height: 300px;
+        position: absolute;
+        opacity: .1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+    }
+    
+    .about-title h2 {
+        border-bottom: 1px solid var(--d-green);
+        margin-bottom: 2%;
+        padding: 1%;
+        color: var(--d-green);
+    
+    }
+    
+    .about-title h3 {
+        color: var(--l-green);
+        margin-bottom: 1%;
+    }
 
+    .about-title p {
+        margin: 0;
+    }
+    
+    .about-content {
+        margin-bottom: 2%;
+    }
 }
