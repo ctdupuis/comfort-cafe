@@ -16,6 +16,14 @@
     align-items: center;
 }
 
+.strict-flex {
+    display: flex;
+}
+
+.space-even {
+    justify-content: space-evenly;
+}
+
 .wrapped {
     flex-wrap: wrap;
 }

@@ -5,3 +5,8 @@
 .inactive {
     color: var(--d-green);
 }
+
+.item-cont {
+    padding: 1%;
+    border: 1px solid var(--d-green);
+}
