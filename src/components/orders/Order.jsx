@@ -1,19 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import Cart from './Cart';
 import OrderItem from './OrderItem';
+import StartOrder from './StartOrder';
 
 export default function Order({ currentUser, order, getOrder, items, getItems }) {
 
     const [currentCat, setCurrentCat] = useState("specials");
-    const [orderComplete, setOrderComplete] = useState(false);
+    const [isOrdering, setIsOrdering] = useState(false);
+    const [isPaying, setIsPaying] = useState(false);
     const [currentOrder, updateCurrentOrder] = useState({
         items: [] 
     });
 
     useEffect(() => {
         getItems();
-        getOrder();
+        if (!order) {
+            getOrder();
+        } else {
+            toggleOrderStart();
+        }
     }, [])
+
+    const toggleOrderStart = () => {
+        setIsOrdering(!isOrdering)
+    }
+
+    const toggleCheckout = () => {
+        setIsPaying(!isPaying)
+    }
 
     const classHandler = {
         true: "active",
@@ -45,13 +59,19 @@ export default function Order({ currentUser, order, getOrder, items, getItems })
 
     return (
         <>
-            <div id="cat-cont">
-                {headers}
-            </div>
-            <div style={{flexDirection: "column"}} className="flex-container">
-                <Cart currentOrder={currentOrder}  />
-                {menu}
-            </div>
+        { !isOrdering ?  
+            <StartOrder currentUser={currentUser} toggleOrderStart={toggleOrderStart}/>
+            :
+            <>
+                <div id="cat-cont">
+                    {headers}
+                </div>
+                <div style={{flexDirection: "column"}} className="flex-container">
+                    <Cart currentOrder={currentOrder}  />
+                    {menu}
+                </div>
+            </>
+         }
         </>
     )
 }

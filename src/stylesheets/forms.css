@@ -39,8 +39,6 @@
 }
 
 .session-form button {
-    font-family: 'Amaranth', cursive;
-    font-family: 'Amaranth', sans-serif;
     margin: 5%;
     background-color: var(--l-green);
     color: var(--d-green);

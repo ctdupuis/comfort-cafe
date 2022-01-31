@@ -28,7 +28,7 @@
     font-size: larger;
 }
 
-.item-price{
+.item-price {
     font-size: larger;
 }
 
@@ -68,6 +68,23 @@
 
 .det-label {
     margin-right: 3%;
+}
+
+.order-btn {
+    background-color: var(--l-green);
+    color: var(--d-green);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+    padding: 4%;
+    margin-top: 2%;
+}
+
+.order-btn:hover {
+    background-color: var(--d-green);
+    color: var(--l-green);
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
@@ -119,5 +136,55 @@
     .item-desc {
         font-size: larger;
         padding: 2%;
+    }
+    .cart-cont {
+        border: 1px solid green;
+        border-radius: 5px;
+        width: 90%;
+    }
+    
+    .cart {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .cart-val {
+        display: flex;
+        justify-content: space-between;
+        width: 85%;
+    }
+    
+    .cart-val li {
+        list-style-type: none;
+    }
+    
+    .details {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .det-label {
+        margin-right: 3%;
+    }
+    
+    .order-btn {
+        background-color: var(--l-green);
+        color: var(--d-green);
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        transition: 0.3s;
+        padding: 1% 4%;
+        margin-top: 2%;
+        text-decoration: none;
+    }
+    
+    .order-btn:hover {
+        background-color: var(--d-green);
+        color: var(--l-green);
+        cursor: pointer;
     }
 }
