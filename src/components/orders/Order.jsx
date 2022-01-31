@@ -31,7 +31,7 @@ export default function Order({ order, getOrder, items, getItems }) {
         if (item.categories.includes(currentCat)) {
             return item
         }
-    }).filter(item => !!item).map((el, idx) => <OrderItem key={idx} item={el} />)
+    }).filter(item => !!item).map((el, idx) => <OrderItem key={el._id} item={el} updateCurrentOrder={updateCurrentOrder} />)
     :
     null
 
@@ -49,7 +49,7 @@ export default function Order({ order, getOrder, items, getItems }) {
                 {headers}
             </div>
             <div style={{flexDirection: "column"}} className="flex-container">
-            <Cart currentOrder={currentOrder} />
+                <Cart currentOrder={currentOrder}  />
                 {menu}
             </div>
         </>

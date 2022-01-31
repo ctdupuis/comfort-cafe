@@ -37,6 +37,30 @@
     padding: 2%;
 }
 
+.cart-cont {
+    border: 1px solid green;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 0;
+}
+
+.cart-val {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+}
+
+.cart-val li {
+    list-style-type: none;
+}
+
 @media only screen and (min-width: 768px) {
     #cat-cont {
         padding: 2%;
