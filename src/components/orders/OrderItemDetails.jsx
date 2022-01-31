@@ -14,7 +14,13 @@ export default function OrderItemDetails({ item, toggleAdd, handleUpdate }) {
         }
     }
 
-    const handleChange = e => setQty(parseInt(e.target.value))
+    const handleChange = e => setQty(parseInt(e.target.value));
+
+    const handleQty = () => {
+        for (let i = 0; i < qty; i++) {
+            handleUpdate(item)
+        }
+    }
 
     return <div className="details">
 
@@ -31,7 +37,7 @@ export default function OrderItemDetails({ item, toggleAdd, handleUpdate }) {
         </div>
 
         <div className="strict-flex space-start">
-            <button onClick={handleUpdate}>Confirm</button>
+            <button onClick={handleQty}>Confirm</button>
             <button onClick={toggleAdd}>Cancel</button>
         </div>
     </div>;

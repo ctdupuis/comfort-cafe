@@ -14,11 +14,16 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
 
     useEffect(() => {
         getItems();
-        getOrder();
+        order ? toggleOrderStart() : getOrder();
     }, [])
 
+    const handleOrderStart = () => {
+        createOrder(currentUser);
+        setIsOrdering(true);
+    }
+
     const toggleOrderStart = () => {
-        setIsOrdering(true)
+        setIsOrdering(true);
     }
 
     const toggleCheckout = () => {
@@ -56,7 +61,7 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
     return (
         <>
         { !isOrdering ?  
-            <StartOrder order={order} currentUser={currentUser} toggleOrderStart={toggleOrderStart} />
+            <StartOrder order={order} currentUser={currentUser} toggleOrderStart={toggleOrderStart} handleOrderStart={handleOrderStart} />
             :
             <>
                 <div id="cat-cont">
