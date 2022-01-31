@@ -15,11 +15,12 @@ import Contact from './components/static/Contact';
 // actions
 import { register, authStatus, login, logout } from './actions/user_actions';
 import { getItems } from './actions/item_actions';
+import { getOrder } from './actions/order_actions';
 
 import { connect } from 'react-redux';
 
 function App({
-   register, authStatus, currentUser, login, logout, getItems, items
+   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder
   }) 
   {
   
@@ -92,13 +93,15 @@ export default connect(
     currentUser: state.userReducer.currentUser,
     loading: state.loadReducer.loading,
     items: state.itemReducer.items,
-    alert: state.alertReducer.alert
+    alert: state.alertReducer.alert,
+    order: state.orderReducer.order
   }),
   {
     register,
     authStatus,
     login,
     logout,
-    getItems
+    getItems,
+    getOrder
   }
 )(App);

@@ -6,6 +6,6 @@ module.exports = {
 
     },
     getCurrentOrder: async(req, res) => {
-        
+        res.status(200).send("Current order endpoint hit")
     }
 }
