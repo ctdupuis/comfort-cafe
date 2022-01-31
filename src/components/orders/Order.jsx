@@ -3,7 +3,7 @@ import Cart from './Cart';
 import OrderItem from './OrderItem';
 import StartOrder from './StartOrder';
 
-export default function Order({ getOrder, currentUser, order, items, getItems, createOrder }) {
+export default function Order({ getOrder, currentUser, order, items, getItems, createOrder, updateOrder }) {
 
     const [currentCat, setCurrentCat] = useState("specials");
     const [isOrdering, setIsOrdering] = useState(false);
@@ -45,7 +45,7 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
         if (item.categories.includes(currentCat)) {
             return item
         }
-    }).filter(item => !!item).map((el, idx) => <OrderItem key={el._id} item={el} updateCurrentOrder={updateCurrentOrder} />)
+    }).filter(item => !!item).map((el, idx) => <OrderItem key={el._id} item={el} orderID={order._id} updateCurrentOrder={updateCurrentOrder} updateOrder={updateOrder} />)
     :
     null
 

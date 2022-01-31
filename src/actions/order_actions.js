@@ -25,3 +25,14 @@ export const createOrder = user => {
         dispatch({type: 'END_LOAD'})
     }
 }
+
+export const updateOrder = (id, orderdata) => {
+    return async (dispatch) => {
+        console.log(orderdata)
+        dispatch({type: 'START_LOAD'})
+        const response = await axios.put(`${API_ROOT}/orders/${id}`, { orderdata }, {withCredentials:true})
+        const order = response.data;
+        console.log(order)
+        dispatch({type: 'END_LOAD'})
+    }
+}

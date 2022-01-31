@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaShoppingCart} from 'react-icons/fa';
 
 export default function Cart({ currentOrder }) {
 
@@ -25,21 +26,21 @@ export default function Cart({ currentOrder }) {
     }
 
     return <div className="cart-cont">
-        <h3 style={{textAlign:"center"}}>Your cart</h3>
+        <h3 style={{textAlign:"center"}}>Your cart </h3>
         <ul className="cart">
             <div className="cart-val">
                 <li>Items:</li><li>{itemCount}</li>
             </div>
             <div className="cart-val">
-                <li>Subtotal:</li><li>{calculateSubtotal()}</li>
+                <li>Subtotal:</li><li>${calculateSubtotal()}</li>
             </div>
             <div className="cart-val">
-                <li>Tax:</li><li>{calculateTax()}</li>
+                <li>Tax:</li><li>${calculateTax()}</li>
             </div>
             <div className="cart-val">
-                <li>Total:</li><li>{calulateTotal()}</li>
+                <li>Total:</li><li>${calulateTotal()}</li>
             </div>
-            <button>Checkout</button>
+            <button>Checkout <FaShoppingCart /></button>
         </ul>
     </div>
 }

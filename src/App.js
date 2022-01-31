@@ -15,12 +15,12 @@ import Contact from './components/static/Contact';
 // actions
 import { register, authStatus, login, logout } from './actions/user_actions';
 import { getItems } from './actions/item_actions';
-import { getOrder, createOrder } from './actions/order_actions';
+import { getOrder, createOrder, updateOrder } from './actions/order_actions';
 
 import { connect } from 'react-redux';
 
 function App({
-   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, createOrder
+   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, createOrder, updateOrder
   }) 
   {
   
@@ -64,7 +64,7 @@ function App({
       />
 
       <Route exact path={"/order"}
-        render={props => <Order getOrder={getOrder} currentUser={currentUser} order={order} getOrder={getOrder} items={items} getItems={getItems} createOrder={createOrder} {...props} />}
+        render={props => <Order getOrder={getOrder} currentUser={currentUser} order={order} getOrder={getOrder} items={items} getItems={getItems} createOrder={createOrder} updateOrder={updateOrder} {...props} />}
       />
 
 
@@ -104,6 +104,7 @@ export default connect(
     logout,
     getItems,
     getOrder,
-    createOrder
+    createOrder,
+    updateOrder
   }
 )(App);

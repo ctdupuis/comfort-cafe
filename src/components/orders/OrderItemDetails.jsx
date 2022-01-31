@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function OrderItemDetails({ item, toggleAdd, handleUpdate }) {
+export default function OrderItemDetails({ item, toggleAdd, handleUpdate, orderID }) {
     const [qty, setQty] = useState(1);
 
     const increment = () => {

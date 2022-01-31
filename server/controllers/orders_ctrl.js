@@ -26,5 +26,9 @@ module.exports = {
         } else {
             res.status(200).send(false)
         }
+    },
+    updateOrder: async(req, res) => {
+        console.log(req.params.id)
+        res.status(200).send("Update endpoint hit")
     }
 }

@@ -54,13 +54,13 @@
     color: var(--l-green);
 }
 
-svg {
+.eye {
     margin-top: -19px;
     margin-right: -113px;
     border-radius: 10px;
 }
 
-svg:hover {
+.eye:hover {
     cursor: pointer;
     background-color: #cdcdcd;
 }
@@ -98,7 +98,7 @@ svg:hover {
         padding: .5%;
     }
 
-    svg {
+    .eye {
         margin-top: -26px;
         margin-right: -500px;
     }

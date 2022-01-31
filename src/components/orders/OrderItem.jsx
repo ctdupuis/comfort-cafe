@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import OrderItemDetails from './OrderItemDetails';
 
-export default function OrderItem({ item, updateCurrentOrder }) {
+export default function OrderItem({ item, updateCurrentOrder, updateOrder, orderID }) {
 
     const [isAdding, setIsAdding] = useState(false);
 
@@ -14,6 +14,7 @@ export default function OrderItem({ item, updateCurrentOrder }) {
                 items: [...prevState.items, item]
             }
         })
+        updateOrder(orderID, item)
         setIsAdding(false);
     }
 
