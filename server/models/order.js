@@ -1,4 +1,5 @@
-const mongoose, { Schema } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema } = require('mongoose');
 const ObjectId = Schema.ObjectId;
 
 
@@ -10,7 +11,11 @@ const OrderSchema = new Schema({
     user: {
         type: ObjectId,
         ref: 'User' 
-    }
+    },
+    items: [{
+        type: ObjectId,
+        ref: 'Item'
+    }]
 })
 
 

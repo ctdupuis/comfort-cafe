@@ -33,6 +33,10 @@ const UserSchema = new Schema({
     dob: {
         type: Date,
         required: true
+    },
+    order: {
+        type: ObjectId,
+        ref: 'Order'
     }
 })
 

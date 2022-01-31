@@ -36,10 +36,12 @@ app.use(sessions(session));
 
 
 // Routers
-const userRouter = require("./routes/user_routes")
+const userRouter = require("./routes/user_routes");
 const itemRouter = require("./routes/item_routes");
+const orderRouter = require("./routes/order_routes");
 app.use("/users", userRouter);
 app.use("/items", itemRouter);
+app.use("/orders", orderRouter);
 
 
 
