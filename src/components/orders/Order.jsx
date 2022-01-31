@@ -3,7 +3,7 @@ import Cart from './Cart';
 import OrderItem from './OrderItem';
 import StartOrder from './StartOrder';
 
-export default function Order({ currentUser, order, getOrder, items, getItems }) {
+export default function Order({ getOrder, currentUser, order, items, getItems, createOrder }) {
 
     const [currentCat, setCurrentCat] = useState("specials");
     const [isOrdering, setIsOrdering] = useState(false);
@@ -14,15 +14,11 @@ export default function Order({ currentUser, order, getOrder, items, getItems })
 
     useEffect(() => {
         getItems();
-        if (!order) {
-            getOrder();
-        } else {
-            toggleOrderStart();
-        }
+        order ? toggleOrderStart() : getOrder();
     }, [])
 
     const toggleOrderStart = () => {
-        setIsOrdering(!isOrdering)
+        setIsOrdering(true)
     }
 
     const toggleCheckout = () => {
@@ -60,7 +56,7 @@ export default function Order({ currentUser, order, getOrder, items, getItems })
     return (
         <>
         { !isOrdering ?  
-            <StartOrder currentUser={currentUser} toggleOrderStart={toggleOrderStart}/>
+            <StartOrder order={order} currentUser={currentUser} toggleOrderStart={toggleOrderStart} />
             :
             <>
                 <div id="cat-cont">

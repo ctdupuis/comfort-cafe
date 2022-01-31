@@ -16,6 +16,10 @@ const OrderSchema = new Schema({
         type: ObjectId,
         ref: 'Item'
     }],
+    complete: {
+        type: Boolean,
+        default: false
+    },
     subtotal: {
         type: mongoose.Types.Decimal128,
         required: true
@@ -23,6 +27,9 @@ const OrderSchema = new Schema({
     total: {
         type: mongoose.Types.Decimal128,
         required: true
+    },
+    confirmation: {
+        type: String
     }
 })
 

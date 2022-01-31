@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 export default function UserHead({ currentUser, logout, history }) {
-    const name = currentUser ? currentUser.name.first + " " + currentUser.name.last : null
+    const name = currentUser ? currentUser.name.first : null
     return (
         <div className="auth-container">
             <div className="auth-item">

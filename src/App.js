@@ -15,7 +15,7 @@ import Contact from './components/static/Contact';
 // actions
 import { register, authStatus, login, logout } from './actions/user_actions';
 import { getItems } from './actions/item_actions';
-import { getOrder } from './actions/order_actions';
+import { getOrder, createOrder } from './actions/order_actions';
 
 import { connect } from 'react-redux';
 
@@ -26,6 +26,7 @@ function App({
   
   useEffect(() => {
     authStatus();
+    getOrder()
   }, [])
 
   return (
@@ -63,7 +64,7 @@ function App({
       />
 
       <Route exact path={"/order"}
-        render={props => <Order currentUser={currentUser} order={order} getOrder={getOrder} items={items} getItems={getItems} />}
+        render={props => <Order getOrder={getOrder} currentUser={currentUser} order={order} getOrder={getOrder} items={items} getItems={getItems} createOrder={createOrder} />}
       />
 
 
