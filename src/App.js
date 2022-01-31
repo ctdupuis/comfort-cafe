@@ -63,7 +63,7 @@ function App({
       />
 
       <Route exact path={"/order"}
-        render={props => <Order />}
+        render={props => <Order order={order} getOrder={getOrder} items={items} getItems={getItems} />}
       />
 
 
