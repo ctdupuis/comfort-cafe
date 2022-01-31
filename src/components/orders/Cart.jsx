@@ -2,16 +2,14 @@ import React from 'react';
 
 export default function Cart({ currentOrder }) {
 
+    const itemCount = currentOrder.items.length;
+
     const calculateSubtotal = () => {
         let prices = currentOrder.items.map(item => {
             return parseFloat(item.price["$numberDecimal"])
         })
         return prices.reduce((prev, current) => prev += current, 0)
     }
-
-    const itemCount = currentOrder.items.length;
-    // const subtotal = calculateSubtotal();
-    // const tax = calculateTax();
 
     const calculateTax = () => {
         let subtotal = calculateSubtotal();

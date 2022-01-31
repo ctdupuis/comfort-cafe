@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import OrderItemDetails from './OrderItemDetails';
 
 export default function OrderItem({ item, updateCurrentOrder }) {
 
-    const handleClick = e => {
+    const [isAdding, setIsAdding] = useState(false);
+
+    const toggleAdd = () => setIsAdding(!isAdding);
+
+    const handleUpdate = e => {
         updateCurrentOrder(prevState => {
             return {
                 ...prevState,
                 items: [...prevState.items, item]
             }
         })
+        setIsAdding(false);
+    }
+
+
+
+    const handleRemoveBtn = () => {
+
     }
 
     return(
@@ -20,7 +32,11 @@ export default function OrderItem({ item, updateCurrentOrder }) {
             <div className="item-desc">
                 {item.description}
             </div>
-            <button data-id={item._id} className="add-btn" onClick={handleClick}>Add</button>
+            {  !isAdding ?
+            <button className="add-btn" onClick={toggleAdd}>Add</button> 
+            :
+            <OrderItemDetails item={item} toggleAdd={toggleAdd} handleUpdate={handleUpdate} />
+            }
         </div>
     );
 }

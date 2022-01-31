@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Cart from './Cart';
 import OrderItem from './OrderItem';
 
-export default function Order({ order, getOrder, items, getItems }) {
+export default function Order({ currentUser, order, getOrder, items, getItems }) {
 
     const [currentCat, setCurrentCat] = useState("specials");
     const [orderComplete, setOrderComplete] = useState(false);

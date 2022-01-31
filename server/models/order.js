@@ -15,7 +15,15 @@ const OrderSchema = new Schema({
     items: [{
         type: ObjectId,
         ref: 'Item'
-    }]
+    }],
+    subtotal: {
+        type: mongoose.Types.Decimal128,
+        required: true
+    },
+    total: {
+        type: mongoose.Types.Decimal128,
+        required: true
+    }
 })
 
 
