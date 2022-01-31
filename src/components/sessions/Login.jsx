@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "../../stylesheets/forms.css";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 export default class Login extends Component {
     state = {
@@ -55,6 +56,8 @@ export default class Login extends Component {
 
                         <button type="submit">Log in</button>
                     </form>
+
+                    <div style={{marginBottom: "2%"}}>Don't have an account yet? <NavLink to={"/register"}>Register here</NavLink></div>
                 </div>
             </div>
         )

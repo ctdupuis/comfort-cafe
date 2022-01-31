@@ -3,6 +3,7 @@ import "../../stylesheets/forms.css";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import moment from 'moment';
 import { states } from './states';
+import { NavLink } from 'react-router-dom';
 
 export default class Register extends Component {
     state = {
@@ -73,6 +74,7 @@ export default class Register extends Component {
             <div className="wrapper" style={{ textAlign: "center", backgroundColor: "white" }}>
                 <div className="form-cont">
                 <h2 className="form-head">Sign up</h2>
+                <div style={{marginBottom: "2%"}}>Already registered? <NavLink to={"/login"}>Log in here</NavLink></div>
                     <form className="session-form" onSubmit={this.handleSubmit} >
 
                         <h3 className="form-sect">Personal Info</h3>

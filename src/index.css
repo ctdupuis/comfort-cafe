@@ -7,6 +7,16 @@ body, button {
   font-family: 'Amaranth', sans-serif;
 }
 
+a {
+  color: var(--l-green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--d-green);
+  text-decoration: underline;
+}
+
 :root {
   --d-green: #093824;
   --l-green: #6C9A8B;
