@@ -6,7 +6,7 @@ export default function UserHead({ currentUser, logout, history }) {
     return (
         <div className="auth-container">
             <div className="auth-item">
-                Welcome, {name}
+                <a style={{textDecoration: "none"}} disabled={true}>Welcome, {name}</a>
             </div>
             <div className="auth-item">
                 <NavLink to={"/"} onClick={() => logout(history)}>
