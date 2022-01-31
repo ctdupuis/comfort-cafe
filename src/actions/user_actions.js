@@ -47,6 +47,7 @@ export const logout = (history) => {
         const response = await axios.get(`${API_ROOT}/users/logout`, { withCredentials:true });
         const data = response.data;
         dispatch({ type: 'LOGOUT_USER' })
+        dispatch({type: 'CLEAR_ORDER'})
         dispatch({ type: 'END_LOAD' })
         history.replace("/")
     }

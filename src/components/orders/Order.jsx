@@ -14,7 +14,7 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
 
     useEffect(() => {
         getItems();
-        order ? toggleOrderStart() : getOrder();
+        getOrder();
     }, [])
 
     const toggleOrderStart = () => {

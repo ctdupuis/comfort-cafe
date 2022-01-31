@@ -25,6 +25,7 @@ export default function Cart({ currentOrder }) {
     }
 
     return <div className="cart-cont">
+        <h3 style={{textAlign:"center"}}>Your cart</h3>
         <ul className="cart">
             <div className="cart-val">
                 <li>Items:</li><li>{itemCount}</li>

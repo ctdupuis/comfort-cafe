@@ -9,8 +9,11 @@ module.exports = {
     },
     getCurrentOrder: async(req, res) => {
         if (req.session.user) {
-            const orderCheck = await Order.find({ userID: req.session.user.userID }).where("complete").equals(false);
-            res.status(200).send(orderCheck)
+            const orderCheck = await Order.find({ userID: req.session.user._id }).where("complete").equals(false);
+            if (orderCheck.length === 0) {
+                res.status(200).send(false)
+            }
+            res.status(200).send(orderCheck.pop())
         } else {
             res.status(200).send(false)
         }

@@ -26,7 +26,7 @@ function App({
   
   useEffect(() => {
     authStatus();
-    getOrder()
+
   }, [])
 
   return (

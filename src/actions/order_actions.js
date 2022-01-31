@@ -6,7 +6,6 @@ export const getOrder = () => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.get(`${API_ROOT}/orders`, {withCredentials:true})
         const order = response.data;
-        console.log(order)
         dispatch({type: 'START_ORDER', payload: order})
         dispatch({ type: 'END_LOAD'})
     }

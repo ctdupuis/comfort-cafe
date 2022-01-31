@@ -8,7 +8,7 @@ const OrderSchema = new Schema({
         type: Date,
         required: true
     },
-    user: {
+    userID: {
         type: ObjectId,
         ref: 'User' 
     },

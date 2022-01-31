@@ -15,6 +15,11 @@ export default function itemReducer(
                 ...state,
                 order: false
             };
+        case 'CLEAR_ORDER':
+            return {
+                ...state,
+                order: false
+            }
         default: return state;
     }
 };
