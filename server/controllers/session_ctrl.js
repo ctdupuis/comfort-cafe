@@ -21,7 +21,7 @@ module.exports = {
         const { userdata } = req.body;
         const securePassword = bcrypt.hashSync(userdata.password, salt);
         userdata.password = securePassword;
-        const newUser = new User(userdata)
+        const newUser = new User(userdata);
         try {
             const insertion = await User.create(newUser);
             const secureUser = {...insertion["_doc"]};

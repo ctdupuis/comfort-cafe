@@ -19,7 +19,6 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
 
     const handleOrderStart = () => {
         createOrder(currentUser);
-        setIsOrdering(true);
     }
 
     const toggleOrderStart = () => {
@@ -60,7 +59,7 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
 
     return (
         <>
-        { !isOrdering ?  
+        { !isOrdering && !order ?  
             <StartOrder order={order} currentUser={currentUser} toggleOrderStart={toggleOrderStart} handleOrderStart={handleOrderStart} />
             :
             <>

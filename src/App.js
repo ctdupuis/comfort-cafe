@@ -20,7 +20,7 @@ import { getOrder, createOrder } from './actions/order_actions';
 import { connect } from 'react-redux';
 
 function App({
-   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder
+   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, createOrder
   }) 
   {
   
@@ -56,7 +56,7 @@ function App({
       />
 
       <Route exact path={"/contact"}
-        render={(props) => <Contact />}
+        render={props => <Contact />}
       />
 
       <Route exact path={"/careers"}
@@ -64,7 +64,7 @@ function App({
       />
 
       <Route exact path={"/order"}
-        render={props => <Order getOrder={getOrder} currentUser={currentUser} order={order} getOrder={getOrder} items={items} getItems={getItems} createOrder={createOrder} />}
+        render={props => <Order getOrder={getOrder} currentUser={currentUser} order={order} getOrder={getOrder} items={items} getItems={getItems} createOrder={createOrder} {...props} />}
       />
 
 
@@ -103,6 +103,7 @@ export default connect(
     login,
     logout,
     getItems,
-    getOrder
+    getOrder,
+    createOrder
   }
 )(App);

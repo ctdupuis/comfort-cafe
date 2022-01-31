@@ -3,9 +3,14 @@ const Order = require('../models/order');
 
 module.exports = {
     createOrder: async(req, res) => {
-        console.log(req.body)
-        const order = await Order.create();
-        res.status(200).send(order)
+        const { _id, total, subtotal, date} = req.body;
+        const newOrder = new Order({userID: _id, total: total, subtotal: subtotal, date: date});
+        try {
+            const insertion = await Order.create(newOrder);
+            res.status(200).send(insertion);
+        } catch (err) {
+            console.log("Error:", err)
+        }
     },
     getCurrentOrder: async(req, res) => {
         if (req.session.user) {
