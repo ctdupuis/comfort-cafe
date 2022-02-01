@@ -34,6 +34,7 @@ export const updateOrder = (id, orderdata) => {
         dispatch({type: 'START_LOAD'})
         const response = await axios.put(`${API_ROOT}/orders/${id}`, { _id, name, price, categories, description, qty }, {withCredentials:true})
         const order = response.data;
+        dispatch({ type: 'UPDATE_ORDER', payload: order })
         console.log("updated order:", order)
         dispatch({type: 'END_LOAD'})
     }
