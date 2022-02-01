@@ -2,21 +2,18 @@
 
 ![Demo Screenshot](demo_ss.png)
 
-The Comfort Café is an app designed around the idea of a restaurant. This is purely conceptual and does not exist in the real world as an actual business.
+The Comfort Café is an app designed around the idea of a restaurant. This is purely conceptual and does not exist in the real world as an actual business. While working on this project, I asked my fiancee to treat me like she was my client, making changes and developing features to meet her requests.
 
 ## Features
 
 - Authentication and authorization including administrator privileges
 - Order placement and order history tracking
 - Dynamic menu page with filters based on food categories
-- Online applications for authenticated users to apply for a position
 - Styling scales for mobile
 
 ## Original Figma Designs
 
 [Home Page](https://www.figma.com/file/rNPn0P1IX3ILIya7gbZy9Z/Comfort-Caf%C3%A9?node-id=0%3A1)
-
-[Careers Page](https://www.figma.com/file/rNPn0P1IX3ILIya7gbZy9Z/Comfort-Caf%C3%A9?node-id=3%3A52)
 
 [Menu Page](https://www.figma.com/file/rNPn0P1IX3ILIya7gbZy9Z/Comfort-Caf%C3%A9?node-id=8%3A85)
 

@@ -2,11 +2,9 @@
 
 [x] authentication
 
-[] online ordering
+[x] online ordering
 
-[~] responsive design
-
-[] applying to positions
+[x] responsive design
 
 
 ## Auth
@@ -19,21 +17,21 @@
 
 [x] auth endpoint to check if someone's logged in
 
-[~] different authorization front end blocks/permissions
+[x] different authorization front end blocks/permissions
 
 ## Ordering
 
-[] Order model tied to User model
+[x] Order model tied to User model
 
-[] Order_History model tied to User model
+[] Order History => query database for last order completed by user
 
-[] style ordering page, scaling from mobile upwards
+[x] style ordering page, scaling from mobile upwards
 
-[] have a begin order button that inits a new order, starts with status:incomplete, saves it to Mongo and Redux
+[x] have a begin order button that inits a new order, starts with status:incomplete, saves it to Mongo and Redux
 
-[] send a put request each time an item is added to an order, update Redux
+[x] send a put request each time an item is added to an order, update Redux
 
-[] when order is placed, change status to complete, generate confirmation #
+[] when order is placed, change status to complete, **generate confirmation #**
 
 [] push order into user's order-history
 
@@ -49,25 +47,11 @@
 
 [x] menu page
 
-[] order page
-
-[] careers page
+[x] order page
 
 [x] contact page
 
 [x] about us page
-
-## Careers
-
-[] Application model
-
-[] list of positions to apply to
-
-[] filter of some kind
-
-[] clicking a position brings up a form component
-
-[?] on form submit, send an email to a dummy inbox informing that it's completed
 
 ## Known Issues
 
