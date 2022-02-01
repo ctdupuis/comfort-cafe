@@ -83,7 +83,9 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
                     :
                     <Checkout order={order} toggleCheckout={toggleCheckout} handleConfirm={handleConfirm} />}
                 </div>
+                <div className="flex-container" style={{flexDirection: "column"}}>
                     {menu}
+                </div>
             </>
          }
         </>
