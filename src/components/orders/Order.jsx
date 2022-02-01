@@ -42,6 +42,11 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
         setCurrentCat(e.target.innerText);   
     }
 
+    const handleConfirm = () => {
+
+
+    }
+
     const categories = items.length > 0 ? items.map(item => item.categories).flat(1).filter((item, pos, self) => self.indexOf(item) === pos) : null
 
     const menu = categories ?
@@ -74,7 +79,7 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
                     {!isPaying ? 
                     <Cart order={order} toggleCheckout={toggleCheckout} />
                     :
-                    <Checkout order={order} toggleCheckout={toggleCheckout} />}
+                    <Checkout order={order} toggleCheckout={toggleCheckout} handleConfirm={handleConfirm} />}
                 </div>
                     {menu}
             </>

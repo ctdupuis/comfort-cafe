@@ -18,6 +18,7 @@ import { getItems } from './actions/item_actions';
 import { getOrder, createOrder, updateOrder } from './actions/order_actions';
 
 import { connect } from 'react-redux';
+import OrderConfirm from './components/orders/OrderConfirm';
 
 function App({
    register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, createOrder, updateOrder
@@ -59,8 +60,8 @@ function App({
         render={props => <Contact />}
       />
 
-      <Route exact path={"/careers"}
-        render={props => <Careers />}
+      <Route exact path={"/confirm"}
+        render={props => <OrderConfirm />}
       />
 
       <Route exact path={"/order"}

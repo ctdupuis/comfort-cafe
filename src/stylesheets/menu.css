@@ -115,6 +115,22 @@
     margin-right: 3%;
 }
 
+.payment {
+    width: 50%;
+}
+
+.form-group label {
+    margin: 1%;
+}
+
+.cc {
+    width: 10%;
+}
+
+.exp, .cvv {
+    width: 15%;
+}
+
 @media only screen and (min-width: 768px) {
     #cat-cont {
         padding: 2%;
