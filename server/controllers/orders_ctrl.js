@@ -1,5 +1,6 @@
 require('dotenv').config();
 const Order = require('../models/order');
+const Item = require("../models/item");
 
 module.exports = {
     createOrder: async(req, res) => {
@@ -14,13 +15,13 @@ module.exports = {
     },
     getCurrentOrder: async(req, res) => {
         if (req.session.user) {
-            const orderCheck = await Order.find({ userID: req.session.user._id }).where("complete").equals(false);
+            const orderCheck = await Order.find({ userID: req.session.user._id }).where("complete").equals(false).populate('items');
             let response;
             if (orderCheck.length === 0) {
                 response = false;
                 res.status(200).send(response);
             } else {
-                response = orderCheck.pop()
+                response = orderCheck.pop();
                 res.status(200).send(response);
             }
         } else {
@@ -28,7 +29,8 @@ module.exports = {
         }
     },
     updateOrder: async(req, res) => {
-        console.log(req.params.id)
-        res.status(200).send("Update endpoint hit")
+        const item = await Item.find({ _id: req.body._id });
+        const order = await Order.findOneAndUpdate({ _id: req.params.id}, { $push: { items: item }}).populate('items');
+        res.status(200).send(order);
     }
 }

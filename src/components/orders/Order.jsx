@@ -9,7 +9,10 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
     const [isOrdering, setIsOrdering] = useState(false);
     const [isPaying, setIsPaying] = useState(false);
     const [currentOrder, updateCurrentOrder] = useState({
-        items: [] 
+        items: [],
+        subtotal: 0.00,
+        tax: 0.00,
+        total: 0.00 
     });
 
     useEffect(() => {
@@ -45,7 +48,7 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
         if (item.categories.includes(currentCat)) {
             return item
         }
-    }).filter(item => !!item).map((el, idx) => <OrderItem key={el._id} item={el} orderID={order._id} updateCurrentOrder={updateCurrentOrder} updateOrder={updateOrder} />)
+    }).filter(item => !!item).map((el, idx) => <OrderItem key={el._id} item={el} currentOrder={currentOrder} order={order} updateCurrentOrder={updateCurrentOrder} updateOrder={updateOrder} />)
     :
     null
 
@@ -67,7 +70,7 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
                     {headers}
                 </div>
                 <div style={{flexDirection: "column"}} className="flex-container">
-                    <Cart currentOrder={currentOrder}  />
+                    <Cart currentOrder={currentOrder} order={order} updateCurrentOrder={updateCurrentOrder} />
                     {menu}
                 </div>
             </>

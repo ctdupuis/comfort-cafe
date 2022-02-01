@@ -21,6 +21,10 @@ const ItemSchema = new Schema({
     description: {
         type: String,
         required: true
+    },
+    qty: {
+        type: Number,
+        default: 1
     }
 })
 

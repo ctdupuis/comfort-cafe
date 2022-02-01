@@ -6,6 +6,7 @@ export const getOrder = () => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.get(`${API_ROOT}/orders`, {withCredentials:true})
         const order = response.data;
+        console.log("retreived order:", order)
         dispatch({type: 'START_ORDER', payload: order})
         dispatch({ type: 'END_LOAD'})
     }
@@ -28,9 +29,9 @@ export const createOrder = user => {
 
 export const updateOrder = (id, orderdata) => {
     return async (dispatch) => {
-        console.log(orderdata)
+        let {_id, name, price, categories, description, qty} = orderdata;
         dispatch({type: 'START_LOAD'})
-        const response = await axios.put(`${API_ROOT}/orders/${id}`, { orderdata }, {withCredentials:true})
+        const response = await axios.put(`${API_ROOT}/orders/${id}`, { _id, name, price, categories, description, qty }, {withCredentials:true})
         const order = response.data;
         console.log(order)
         dispatch({type: 'END_LOAD'})

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaShoppingCart} from 'react-icons/fa';
 
-export default function Cart({ currentOrder }) {
+export default function Cart({ currentOrder, order, updateCurrentOrder }) {
 
     const itemCount = currentOrder.items.length;
 
@@ -9,20 +9,33 @@ export default function Cart({ currentOrder }) {
         let prices = currentOrder.items.map(item => {
             return parseFloat(item.price["$numberDecimal"])
         })
-        return prices.reduce((prev, current) => prev += current, 0)
+        let subtotal = prices.reduce((prev, current) => prev += current, 0);
+        return subtotal
     }
 
     const calculateTax = () => {
         let subtotal = calculateSubtotal();
-        let tax = subtotal * .0945
-        return Math.round(tax * 100) / 100
+        let tax = subtotal * .0945;
+        let final = Math.round(tax * 100) / 100
+        return final
     }
 
     const calulateTotal = () => {
         let subtotal = calculateSubtotal();
         let tax = calculateTax(subtotal);
-        let total = subtotal += tax;
-        return Math.round(total * 100) / 100
+        let netTotal = subtotal += tax;
+        let total = Math.round(netTotal * 100) / 100;
+        // if (total !== 0) {
+        //     updateCurrentOrder(prevState => {
+        //         return {
+        //             ...prevState,
+        //             subtotal: subtotal,
+        //             tax: tax,
+        //             total: total
+        //         }
+        //     })
+        // }
+        return total
     }
 
     return <div className="cart-cont">

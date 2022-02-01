@@ -17,9 +17,11 @@ export default function OrderItemDetails({ item, toggleAdd, handleUpdate, orderI
     const handleChange = e => setQty(parseInt(e.target.value));
 
     const handleQty = () => {
-        for (let i = 0; i < qty; i++) {
-            handleUpdate(item)
-        }
+        // for (let i = 0; i < qty; i++) {
+        //     handleUpdate(item)
+        // }
+        let itemObj = Object.assign(item, { qty: qty })
+        handleUpdate(itemObj)
     }
 
     return <div className="details">

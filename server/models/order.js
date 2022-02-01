@@ -22,7 +22,7 @@ const OrderSchema = new Schema({
     },
     subtotal: {
         type: mongoose.Types.Decimal128,
-        required: true
+        get: v => calculateSubtotal(v, this.items)
     },
     total: {
         type: mongoose.Types.Decimal128,
@@ -34,8 +34,18 @@ const OrderSchema = new Schema({
 })
 
 
-
+// OrderSchema.virtual('subtotal').set(function() {
+//     let pricesCombined = this.items.map(item => item.price).reduce((prev, current) => prev += current);
+//     let subtotal = Math.round(pricesCombined * 100) / 100;
+//     this.subtotal = subtotal;
+// })
+function calculateSubtotal(value, items) {
+    let pricesCombined = items.map(item => item.price).reduce((prev, current) => prev += current);
+    let pricesRounded = Math.round(pricesCombined * 100) / 100
+    value = pricesRounded;
+}
 
 const Order = mongoose.model("Order", OrderSchema);
+
 
 module.exports = Order;

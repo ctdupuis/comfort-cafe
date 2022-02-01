@@ -10,10 +10,10 @@ export default function itemReducer(
                 ...state,
                 order: action.payload
             };
-        case 'COMPLETE_ORDER':
+        case 'UPDATE_ORDER':
             return {
                 ...state,
-                order: false
+                order: action.payload
             };
         case 'CLEAR_ORDER':
             return {

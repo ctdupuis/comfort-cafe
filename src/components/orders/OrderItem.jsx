@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import OrderItemDetails from './OrderItemDetails';
 
-export default function OrderItem({ item, updateCurrentOrder, updateOrder, orderID }) {
+export default function OrderItem({ item, updateCurrentOrder, updateOrder, order, currentOrder }) {
 
     const [isAdding, setIsAdding] = useState(false);
 
@@ -14,14 +14,8 @@ export default function OrderItem({ item, updateCurrentOrder, updateOrder, order
                 items: [...prevState.items, item]
             }
         })
-        updateOrder(orderID, item)
+        updateOrder(order._id, item)
         setIsAdding(false);
-    }
-
-
-
-    const handleRemoveBtn = () => {
-
     }
 
     return(
