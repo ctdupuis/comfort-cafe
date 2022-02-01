@@ -16,6 +16,7 @@ export const createOrder = user => {
     return async (dispatch) => {
         const postObj = Object.assign({}, user, {
             total: 0.00,
+            tax: 0.00,
             subtotal: 0.00,
             date: new Date()
         })
@@ -33,7 +34,7 @@ export const updateOrder = (id, orderdata) => {
         dispatch({type: 'START_LOAD'})
         const response = await axios.put(`${API_ROOT}/orders/${id}`, { _id, name, price, categories, description, qty }, {withCredentials:true})
         const order = response.data;
-        console.log(order)
+        console.log("updated order:", order)
         dispatch({type: 'END_LOAD'})
     }
 }

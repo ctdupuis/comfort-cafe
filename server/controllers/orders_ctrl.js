@@ -4,8 +4,8 @@ const Item = require("../models/item");
 
 module.exports = {
     createOrder: async(req, res) => {
-        const { _id, total, subtotal, date} = req.body;
-        const newOrder = new Order({userID: _id, total: total, subtotal: subtotal, date: date});
+        const { _id, total, tax, subtotal, date} = req.body;
+        const newOrder = new Order({userID: _id, total: total, subtotal: subtotal, tax: tax, date: date});
         try {
             const insertion = await Order.create(newOrder);
             res.status(200).send(insertion);
@@ -29,8 +29,23 @@ module.exports = {
         }
     },
     updateOrder: async(req, res) => {
-        const item = await Item.find({ _id: req.body._id });
-        const order = await Order.findOneAndUpdate({ _id: req.params.id}, { $push: { items: item }}).populate('items');
-        res.status(200).send(order);
+        const qty = req.body.qty;
+        const id = req.params.id;
+        const item = await (await Item.find({ _id: req.body._id })).pop();
+        const updates = await runUpdates(qty, id, item);
+        const updated = await Order.findById(req.params.id).populate('items');
+        res.status(200).send(updated);
     }
+}
+
+const runUpdates = async(qty, id, item) => {
+    for (let i = 0; i < qty; i++) {
+        const updates = await Order.findOneAndUpdate({ _id: id}, { $push: { items: item }});
+    }
+    const order = await Order.findById(id).populate('items');
+    let pricesCombined = order.items.map(item => parseFloat(item.price)).reduce((prev, current) => prev += current);
+    const subtotal = Math.round(pricesCombined * 100) / 100;
+    const tax = Math.round((subtotal * .0945) * 100) / 100;
+    const total = Math.round((subtotal + tax) * 100) / 100;
+    const finalUpdate = await Order.findOneAndUpdate({_id:id}, {subtotal: subtotal, tax: tax, total: total})
 }
