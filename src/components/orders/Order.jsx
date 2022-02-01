@@ -3,6 +3,7 @@ import Cart from './Cart';
 import Checkout from './Checkout';
 import OrderItem from './OrderItem';
 import StartOrder from './StartOrder';
+import { useHistory } from 'react-router';
 
 export default function Order({ getOrder, currentUser, order, items, getItems, createOrder, updateOrder }) {
 
@@ -15,6 +16,8 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
         tax: 0.00,
         total: 0.00 
     });
+
+    const history = useHistory();
 
     useEffect(() => {
         getItems();
@@ -43,8 +46,7 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
     }
 
     const handleConfirm = () => {
-
-
+        history.replace("/confirm")
     }
 
     const categories = items.length > 0 ? items.map(item => item.categories).flat(1).filter((item, pos, self) => self.indexOf(item) === pos) : null

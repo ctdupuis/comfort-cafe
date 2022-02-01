@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function OrderItemDetails({ item, toggleAdd, handleUpdate, orderID }) {
+export default function OrderItemDetails({ item, toggleAdd, handleUpdate }) {
     const [qty, setQty] = useState(1);
 
     const increment = () => {
@@ -17,9 +17,6 @@ export default function OrderItemDetails({ item, toggleAdd, handleUpdate, orderI
     const handleChange = e => setQty(parseInt(e.target.value));
 
     const handleQty = () => {
-        // for (let i = 0; i < qty; i++) {
-        //     handleUpdate(item)
-        // }
         let itemObj = Object.assign(item, { qty: qty })
         handleUpdate(itemObj)
     }
@@ -39,8 +36,8 @@ export default function OrderItemDetails({ item, toggleAdd, handleUpdate, orderI
         </div>
 
         <div className="strict-flex space-start">
-            <button onClick={handleQty}>Confirm</button>
-            <button onClick={toggleAdd}>Cancel</button>
+            <button className="add-btn" onClick={handleQty}>Confirm</button>
+            <button className="add-btn cancel" onClick={toggleAdd}>Cancel</button>
         </div>
     </div>;
 }
