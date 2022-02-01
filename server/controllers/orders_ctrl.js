@@ -35,6 +35,9 @@ module.exports = {
         const updates = await runUpdates(qty, id, item);
         const updated = await Order.findById(req.params.id).populate('items');
         res.status(200).send(updated);
+    },
+    completeOrder: async(req, res) => {
+        res.status(200).send("orderComplete() endpoint")
     }
 }
 

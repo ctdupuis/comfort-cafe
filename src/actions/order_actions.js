@@ -37,3 +37,13 @@ export const updateOrder = (id, orderdata) => {
         dispatch({type: 'END_LOAD'})
     }
 }
+
+export const completeOrder = id => {
+    return async (dispatch) => {
+        dispatch({type: 'START_LOAD'})
+        const response = await axios.put(`${API_ROOT}/orders/${id}/complete`)
+        const order = response.data;
+        console.log("completion action:", order)
+        dispatch({type: 'END_LOAD'})
+    }
+}

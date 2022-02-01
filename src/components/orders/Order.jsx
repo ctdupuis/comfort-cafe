@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Cart from './Cart';
-import Checkout from './Checkout';
-import OrderItem from './OrderItem';
+import Cart from './Cart/Cart';
+import Checkout from './Cart/Checkout';
+import OrderItem from './Details/OrderItem';
 import StartOrder from './StartOrder';
 import { useHistory } from 'react-router';
 

@@ -6,7 +6,6 @@ import Home from './components/static/Home/Home';
 import { Route, Redirect } from 'react-router-dom';
 import Menu from './components/menu/Menu';
 import About from './components/static/About';
-import Careers from './components/careers/Careers';
 import Order from './components/orders/Order';
 import Login from './components/sessions/Login';
 import Register from './components/sessions/Register';
@@ -15,13 +14,13 @@ import Contact from './components/static/Contact';
 // actions
 import { register, authStatus, login, logout } from './actions/user_actions';
 import { getItems } from './actions/item_actions';
-import { getOrder, createOrder, updateOrder } from './actions/order_actions';
+import { getOrder, createOrder, updateOrder, completeOrder } from './actions/order_actions';
 
 import { connect } from 'react-redux';
-import OrderConfirm from './components/orders/OrderConfirm';
+import OrderConfirm from './components/orders/Confirm/OrderConfirm';
 
 function App({
-   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, createOrder, updateOrder
+   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, createOrder, updateOrder, completeOrder
   }) 
   {
   
@@ -60,14 +59,14 @@ function App({
         render={props => <Contact />}
       />
 
-      <Route exact path={"/confirm"}
-        render={props => <OrderConfirm />}
-      />
 
       <Route exact path={"/order"}
         render={props => <Order getOrder={getOrder} currentUser={currentUser} order={order} getOrder={getOrder} items={items} getItems={getItems} createOrder={createOrder} updateOrder={updateOrder} {...props} />}
       />
 
+      <Route exact path={"/confirm"}
+        render={props => <OrderConfirm currentUser={currentUser} order={order} completeOrder={completeOrder} {...props} />}
+      />
 
       <Route exact path={"/login"}
         render={props => !currentUser ?
@@ -106,6 +105,7 @@ export default connect(
     getItems,
     getOrder,
     createOrder,
-    updateOrder
+    updateOrder,
+    completeOrder
   }
 )(App);
