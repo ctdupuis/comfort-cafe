@@ -65,7 +65,10 @@ function App({
       />
 
       <Route exact path={"/confirm"}
-        render={props => <OrderConfirm currentUser={currentUser} order={order} completeOrder={completeOrder} {...props} />}
+        render={props => !order ?
+        <Redirect to={"/order"} /> 
+        :
+        <OrderConfirm currentUser={currentUser} order={order} completeOrder={completeOrder} {...props} />}
       />
 
       <Route exact path={"/login"}

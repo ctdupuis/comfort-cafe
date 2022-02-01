@@ -37,7 +37,11 @@ module.exports = {
         res.status(200).send(updated);
     },
     completeOrder: async(req, res) => {
-        res.status(200).send("orderComplete() endpoint")
+        console.log(req.params.id)
+        const id = req.params.id;
+        const update = await Order.findOneAndUpdate({ _id: id}, {complete: true});
+        const updated = await Order.findById(req.params.id).populate('items');
+        res.status(200).send(updated);
     }
 }
 
