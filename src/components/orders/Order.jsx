@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Cart from './Cart';
+import Checkout from './Checkout';
 import OrderItem from './OrderItem';
 import StartOrder from './StartOrder';
 
@@ -70,9 +71,12 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
                     {headers}
                 </div>
                 <div style={{flexDirection: "column"}} className="flex-container">
-                    <Cart currentOrder={currentOrder} order={order} updateCurrentOrder={updateCurrentOrder} />
-                    {menu}
+                    {!isPaying ? 
+                    <Cart order={order} toggleCheckout={toggleCheckout} />
+                    :
+                    <Checkout order={order} toggleCheckout={toggleCheckout} />}
                 </div>
+                    {menu}
             </>
          }
         </>

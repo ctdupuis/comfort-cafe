@@ -20,4 +20,6 @@ a:hover {
 :root {
   --d-green: #093824;
   --l-green: #6C9A8B;
+  --l-red: rgb(255, 55, 55);
+  --d-red: rgb(162, 17, 17);
 }

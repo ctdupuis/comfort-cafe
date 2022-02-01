@@ -1,16 +1,15 @@
 import React from 'react';
-import { FaShoppingCart} from 'react-icons/fa';
-import { GrClear } from 'react-icons/gr';
+import { GiCheckMark } from 'react-icons/gi';
+import { GrClear } from 'react-icons/gr'
 
-export default function Cart({ order, toggleCheckout }) {
-
+export default function Checkout({ order, toggleCheckout }) {
     const itemCount = order.items.length;
     const total = order.total["$numberDecimal"];
     const tax = order.tax["$numberDecimal"];
     const subtotal = order.subtotal["$numberDecimal"];
 
-    return <div className="cart-cont">
-        <h3 style={{textAlign:"center"}}>Your cart </h3>
+  return <div className="cart-cont">
+    <h3 style={{textAlign:"center"}}>Checkout</h3>
         <ul className="cart">
             <div className="cart-val">
                 <li>Items:</li><li>{itemCount}</li>
@@ -25,9 +24,10 @@ export default function Cart({ order, toggleCheckout }) {
                 <li>Total:</li><li>${total}</li>
             </div>
             <div className="strict-flex">
-                <button className="cart-btn" onClick={toggleCheckout}><FaShoppingCart className="cart-icon" />Checkout </button>
-                <button className="cart-btn cancel"><GrClear className="clear-icon" />Clear </button>
+                <button className="cart-btn"><GiCheckMark className="check-icon" />Confirm</button>
+                <button className="cart-btn cancel" onClick={toggleCheckout}><GrClear className="clear-icon" />Cancel</button>
             </div>
+                
         </ul>
-    </div>
+    </div>;
 }
