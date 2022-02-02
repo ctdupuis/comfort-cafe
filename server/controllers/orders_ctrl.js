@@ -44,6 +44,12 @@ module.exports = {
         const updated = await Order.findById(req.params.id).populate('items');
         res.status(200).send(updated);
     },
+    clear: async(req, res) => {
+        const id = req.params.id;
+        const update = await Order.findOneAndUpdate({ _id: id }, { items: [], subtotal: 0, tax: 0, total: 0 })
+        const updated = await Order.findById(req.params.id).populate('items');
+        res.status(200).send(updated);
+    },
     getHistory: async(req, res) => {
         if (req.session.user) {
             const orderCheck = await Order.find({ userID: req.session.user._id }).where("complete").equals(true).populate('items')

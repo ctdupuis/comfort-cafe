@@ -5,7 +5,7 @@ import OrderItem from './Details/OrderItem';
 import StartOrder from './StartOrder';
 import { useHistory } from 'react-router';
 
-export default function Order({ getOrder, checkHistory, currentUser, order, items, getItems, createOrder, updateOrder }) {
+export default function Order({ getOrder, clearOrder, checkHistory, currentUser, order, items, getItems, createOrder, updateOrder }) {
 
     const [currentCat, setCurrentCat] = useState("specials");
     const [isOrdering, setIsOrdering] = useState(false);
@@ -84,7 +84,7 @@ export default function Order({ getOrder, checkHistory, currentUser, order, item
                 </div>
                 <div style={{flexDirection: "column"}} className="flex-container">
                     {!isPaying ? 
-                    <Cart order={order} toggleCheckout={toggleCheckout} />
+                    <Cart order={order} toggleCheckout={toggleCheckout} clearOrder={clearOrder}/>
                     :
                     <Checkout order={order} toggleCheckout={toggleCheckout} handleConfirm={handleConfirm} />}
                 </div>

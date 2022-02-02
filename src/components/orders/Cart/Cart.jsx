@@ -2,12 +2,12 @@ import React from 'react';
 import { FaShoppingCart} from 'react-icons/fa';
 import { GrClear } from 'react-icons/gr';
 
-export default function Cart({ order, toggleCheckout }) {
+export default function Cart({ order, toggleCheckout, clearOrder }) {
 
     const itemCount = order.items.length;
-    const total = order.total["$numberDecimal"];
-    const tax = order.tax["$numberDecimal"];
-    const subtotal = order.subtotal["$numberDecimal"];
+    const total = order.total["$numberDecimal"] || 0;
+    const tax = order.tax["$numberDecimal"] || 0;
+    const subtotal = order.subtotal["$numberDecimal"] || 0;
 
     return <div className="cart-cont">
         <h3 style={{textAlign:"center"}}>Your cart </h3>
@@ -26,7 +26,7 @@ export default function Cart({ order, toggleCheckout }) {
             </div>
             <div className="strict-flex">
                 <button className="cart-btn" onClick={toggleCheckout}><FaShoppingCart className="cart-icon" />Checkout </button>
-                <button className="cart-btn cancel"><GrClear className="clear-icon" />Clear </button>
+                <button className="cart-btn cancel" onClick={() => clearOrder(order._id)}><GrClear className="clear-icon" />Clear </button>
             </div>
         </ul>
     </div>

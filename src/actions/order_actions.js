@@ -11,7 +11,17 @@ export const getOrder = () => {
     }
 }
 
-export const checkHistory = userId => {
+export const clearOrder = id => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.put(`${API_ROOT}/orders/${id}/clear`);
+        const order = response.data;
+        dispatch({ type: 'CLEAR_ITEMS' })
+        dispatch({ type: 'END_LOAD'})
+    }
+}
+
+export const checkHistory = () => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD'})
         const response = await axios.get(`${API_ROOT}/orders/history`);
