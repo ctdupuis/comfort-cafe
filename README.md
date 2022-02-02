@@ -1,6 +1,6 @@
 # Comfort Café
 
-![Demo Screenshot](demo_ss.png)
+![Demo Screenshot](home_page.png)
 
 The Comfort Café is an app designed around the idea of a restaurant. This is purely conceptual and does not exist in the real world as an actual business. While working on this project, I asked my fiancee to treat me like she was my client, making changes and developing features to meet her requests.
 
@@ -18,6 +18,11 @@ The Comfort Café is an app designed around the idea of a restaurant. This is pu
 [Menu Page](https://www.figma.com/file/rNPn0P1IX3ILIya7gbZy9Z/Comfort-Caf%C3%A9?node-id=8%3A85)
 
 [Repo Containing Home Page done in HTML/CSS](https://github.com/ctdupuis/html-css-1.git)
+
+## Screenshots
+
+Home Page
+![Home](home_page.png)
 
 ## Front End
 
