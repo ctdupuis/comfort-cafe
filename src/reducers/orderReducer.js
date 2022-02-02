@@ -1,6 +1,7 @@
 export default function itemReducer(
     state = {
-        order: false
+        order: false,
+        history: false
     },
     action
 ) {
@@ -19,6 +20,17 @@ export default function itemReducer(
             return {
                 ...state,
                 order: false
+            }
+        case 'COMPLETE_ORDER':
+            return {
+                ...state,
+                history: action.payload,
+                order: false
+            }
+        case 'POPULATE_HISTORY':
+            return {
+                ...state,
+                history: action.payload
             }
         default: return state;
     }

@@ -5,7 +5,7 @@ import OrderItem from './Details/OrderItem';
 import StartOrder from './StartOrder';
 import { useHistory } from 'react-router';
 
-export default function Order({ getOrder, currentUser, order, items, getItems, createOrder, updateOrder }) {
+export default function Order({ getOrder, checkHistory, currentUser, order, items, getItems, createOrder, updateOrder }) {
 
     const [currentCat, setCurrentCat] = useState("specials");
     const [isOrdering, setIsOrdering] = useState(false);
@@ -21,8 +21,13 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
 
     useEffect(() => {
         getItems();
-        order ? toggleOrderStart() : getOrder();
+        order ? toggleOrderStart() : orderCheck();
     }, [])
+
+    const orderCheck = () => {
+        getOrder();
+        checkHistory();
+    }
 
     const handleOrderStart = () => {
         createOrder(currentUser);

@@ -13,7 +13,7 @@ export default function OrderConfirm({ currentUser, order, completeOrder }) {
 
   const handleConfirm = async() => {
     if (window.confirm("Press 'OK' if you are positive these details are correct.")) {
-      // const complete = await completeOrder(order._id);
+      const complete = await completeOrder(order._id);
       setConfirmed(true);
     }
   }

@@ -43,6 +43,11 @@ module.exports = {
         const update = await Order.findOneAndUpdate({ _id: id}, {complete: true, confirmation: confirmation});
         const updated = await Order.findById(req.params.id).populate('items');
         res.status(200).send(updated);
+    },
+    getHistory: async(req, res) => {
+        if (req.session.user) {
+            const orderCheck = await Order.find({ userID: req.session.user._id }).where("complete").equals(true).populate('items')
+        }
     }
 }
 

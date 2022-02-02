@@ -11,6 +11,16 @@ export const getOrder = () => {
     }
 }
 
+export const checkHistory = userId => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD'})
+        const response = await axios.get(`${API_ROOT}/orders/history`);
+        const history = response.data;
+        dispatch({ type: 'POPULATE_HISTORY', payload: history })
+        dispatch({ type: 'END_LOAD'})
+    }
+}
+
 export const createOrder = user => {
     return async (dispatch) => {
         const postObj = Object.assign({}, user, {
@@ -43,6 +53,7 @@ export const completeOrder = id => {
         dispatch({type: 'START_LOAD'})
         const response = await axios.put(`${API_ROOT}/orders/${id}/complete`)
         const order = response.data;
+        dispatch({ type: 'COMPLETE_ORDER', payload: order })
         console.log("completion action:", order)
         dispatch({type: 'END_LOAD'})
     }

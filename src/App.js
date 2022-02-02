@@ -14,13 +14,13 @@ import Contact from './components/static/Contact';
 // actions
 import { register, authStatus, login, logout } from './actions/user_actions';
 import { getItems } from './actions/item_actions';
-import { getOrder, createOrder, updateOrder, completeOrder } from './actions/order_actions';
+import { getOrder, checkHistory, createOrder, updateOrder, completeOrder } from './actions/order_actions';
 
 import { connect } from 'react-redux';
 import OrderConfirm from './components/orders/Confirm/OrderConfirm';
 
 function App({
-   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, createOrder, updateOrder, completeOrder
+   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, checkHistory, createOrder, updateOrder, completeOrder
   }) 
   {
   
@@ -61,7 +61,7 @@ function App({
 
 
       <Route exact path={"/order"}
-        render={props => <Order getOrder={getOrder} currentUser={currentUser} order={order} getOrder={getOrder} items={items} getItems={getItems} createOrder={createOrder} updateOrder={updateOrder} {...props} />}
+        render={props => <Order getOrder={getOrder} checkHistory={checkHistory} currentUser={currentUser} order={order} getOrder={getOrder} items={items} getItems={getItems} createOrder={createOrder} updateOrder={updateOrder} {...props} />}
       />
 
       <Route exact path={"/confirm"}
@@ -98,7 +98,8 @@ export default connect(
     loading: state.loadReducer.loading,
     items: state.itemReducer.items,
     alert: state.alertReducer.alert,
-    order: state.orderReducer.order
+    order: state.orderReducer.order,
+    history: state.orderReducer.history
   }),
   {
     register,
@@ -107,6 +108,7 @@ export default connect(
     logout,
     getItems,
     getOrder,
+    checkHistory,
     createOrder,
     updateOrder,
     completeOrder
