@@ -1,6 +1,7 @@
 require('dotenv').config();
 const Order = require('../models/order');
 const Item = require("../models/item");
+const uniqid = require('uniqid');
 
 module.exports = {
     createOrder: async(req, res) => {
@@ -38,12 +39,14 @@ module.exports = {
     },
     completeOrder: async(req, res) => {
         const id = req.params.id;
-        const update = await Order.findOneAndUpdate({ _id: id}, {complete: true});
+        const confirmation = uniqid();
+        const update = await Order.findOneAndUpdate({ _id: id}, {complete: true, confirmation: confirmation});
         const updated = await Order.findById(req.params.id).populate('items');
         res.status(200).send(updated);
     }
 }
 
+// This adds items to the order based off the quantity
 const runUpdates = async(qty, id, item) => {
     for (let i = 0; i < qty; i++) {
         const updates = await Order.findOneAndUpdate({ _id: id}, { $push: { items: item }});

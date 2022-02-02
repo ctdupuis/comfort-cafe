@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function Special() {
     let date = new Date();
@@ -11,7 +11,6 @@ export default function Special() {
                         Today's Special
                     </div>
                     <div className="flex-container">
-
                         <div className="date">
                             {days[date.getDay()]}
                         </div>

@@ -144,6 +144,11 @@
     width: 15%;
 }
 
+.order-det-item {
+    list-style-type: none;
+    margin: 0 2%;
+}
+
 @media only screen and (min-width: 768px) {
     #cat-cont {
         padding: 2%;

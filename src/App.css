@@ -14,6 +14,10 @@
     align-items: center;
 }
 
+.end {
+    align-items: flex-end;
+}
+
 .space-center {
     justify-content: center;
 }
@@ -22,8 +26,16 @@
     justify-content: space-evenly;
 }
 
+.space-bet {
+    justify-content: space-between;
+}
+
 .space-start {
     justify-content: flex-start;
+}
+
+.space-end {
+    justify-content: flex-end;
 }
 
 .col {

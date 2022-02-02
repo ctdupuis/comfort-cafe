@@ -46,7 +46,7 @@ export default function Order({ getOrder, currentUser, order, items, getItems, c
     }
 
     const handleConfirm = () => {
-        history.replace("/confirm")
+        history.replace("/confirm");
     }
 
     const categories = items.length > 0 ? items.map(item => item.categories).flat(1).filter((item, pos, self) => self.indexOf(item) === pos) : null
