@@ -29,11 +29,6 @@ export default function MobileMenu() {
                     About us
                 </NavLink>
             </li>
-            <li>
-                <NavLink to={"/careers"}>
-                    Careers
-                </NavLink>
-            </li>
         </ul>
     )
 }

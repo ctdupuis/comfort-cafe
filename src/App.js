@@ -18,9 +18,10 @@ import { getOrder, clearOrder, checkHistory, createOrder, updateOrder, completeO
 
 import { connect } from 'react-redux';
 import OrderConfirm from './components/orders/Confirm/OrderConfirm';
+import AlertHandler from './components/static/AlertHandler';
 
 function App({
-   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, clearOrder, checkHistory, createOrder, updateOrder, completeOrder
+   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, clearOrder, checkHistory, createOrder, updateOrder, completeOrder, alert
   }) 
   {
   
@@ -39,6 +40,7 @@ function App({
               <Header currentUser={currentUser} logout={logout}
               {...props} />
               <Nav />
+              <AlertHandler alert={alert} />
             </>
           )
         }}
@@ -58,7 +60,7 @@ function App({
       <Route exact path={"/contact"}
         render={props => <Contact />}
       />
-      
+
       <Route exact path={"/order"}
         render={props => <Order getOrder={getOrder} checkHistory={checkHistory} clearOrder={clearOrder} currentUser={currentUser} order={order} getOrder={getOrder} items={items} getItems={getItems} createOrder={createOrder} updateOrder={updateOrder} {...props} />}
       />

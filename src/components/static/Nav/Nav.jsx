@@ -51,12 +51,6 @@ export default function Nav() {
                         About us 
                     </NavLink>
                 </div>
-
-                <div className="nav-item">
-                    <NavLink to={"/careers"}>
-                        Careers
-                    </NavLink>
-                </div>
             </div>
         </nav>
     )

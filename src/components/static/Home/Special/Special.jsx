@@ -21,7 +21,7 @@ export default function Special() {
                 </header>
                 <div className="inner-content">
                     <div className="flex-container">
-                        <h3>Cluck Fried Cow</h3><h3>$9.99</h3>
+                        <h3>Cluck Fried Cow</h3><h3>$10.99</h3>
                     </div>
                     <div className="img-cont" >
                         <img className="food-img" src="images/chicken-fried-steak-2.jpeg" alt="Cluck Fried Cow" />
