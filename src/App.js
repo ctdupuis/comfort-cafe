@@ -58,8 +58,7 @@ function App({
       <Route exact path={"/contact"}
         render={props => <Contact />}
       />
-
-
+      
       <Route exact path={"/order"}
         render={props => <Order getOrder={getOrder} checkHistory={checkHistory} clearOrder={clearOrder} currentUser={currentUser} order={order} getOrder={getOrder} items={items} getItems={getItems} createOrder={createOrder} updateOrder={updateOrder} {...props} />}
       />
