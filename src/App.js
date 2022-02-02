@@ -41,7 +41,7 @@ function App({
               <Header currentUser={currentUser} logout={logout}
               {...props} />
               <Nav />
-              <AlertHandler alert={alert} clearAlert={clearAlert} />
+              <AlertHandler alert={alert} clearAlert={clearAlert} {...props} />
             </>
           )
         }}

@@ -50,6 +50,6 @@ export const logout = (history) => {
         dispatch({ type: 'LOGOUT_USER' })
         dispatch({type: 'CLEAR_ORDER'})
         dispatch({ type: 'END_LOAD' })
-        history.replace("/")
+        // history.replace("/")
     }
 }
