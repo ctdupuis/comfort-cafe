@@ -21,8 +21,12 @@ The Comfort Café is an app designed around the idea of a restaurant. This is pu
 
 ## Screenshots
 
-Home Page
-![Home](home_page.png)
+### Menu Page
+Desktop
+![Menu Desk](menu_page.png)
+
+Mobile
+![Menu Mobile](menu_mobile.png)
 
 ## Front End
 
