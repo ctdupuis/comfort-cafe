@@ -10,8 +10,8 @@ export default function OrderDisplay({ currentUser, order, confirmed, handleConf
             <UserDetails currentUser={currentUser} />
             
             <div className="strict-flex center space-center">
-                <button onClick={handleConfirm}>Complete Order</button>
-                <button onClick={handleCancel}>Cancel</button>
+                <button className="add-btn" onClick={handleConfirm}>Complete Order</button>
+                <button className="add-btn cancel" onClick={handleCancel}>Cancel</button>
             </div>
         </div>
     </div>

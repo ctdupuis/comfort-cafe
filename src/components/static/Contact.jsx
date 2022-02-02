@@ -46,8 +46,8 @@ export default function Contact() {
                 </div>
                 <div className="flex-container">
                     <div className="flex-container col">
-                        <div className="c-info">Phone</div>
                         <div className="c-info">Email</div>
+                        <div className="c-info">Phone</div>
                     </div>
 
                     <div className="flex-container col">

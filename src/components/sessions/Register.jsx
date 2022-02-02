@@ -89,9 +89,9 @@ export default class Register extends Component {
 
                         {  
                             this.state.type === "password" ? 
-                            <FaEyeSlash onClick={this.handleVisToggle}/>
+                            <FaEyeSlash className="eye" onClick={this.handleVisToggle}/>
                             :
-                            <FaEye onClick={this.handleVisToggle}/>
+                            <FaEye className="eye" onClick={this.handleVisToggle}/>
                         }
 
                         <label htmlFor="firstName">First Name</label>
