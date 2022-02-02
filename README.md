@@ -9,6 +9,7 @@ The Comfort Café is an app designed around the idea of a restaurant. This is pu
 - Authentication and authorization including administrator privileges
 - Order placement and order history tracking
 - Dynamic menu page with filters based on food categories
+- Data validation to prevent users from persisting incomplete or malicious data
 - Styling scales for mobile
 
 ## Original Figma Designs
@@ -18,15 +19,6 @@ The Comfort Café is an app designed around the idea of a restaurant. This is pu
 [Menu Page](https://www.figma.com/file/rNPn0P1IX3ILIya7gbZy9Z/Comfort-Caf%C3%A9?node-id=8%3A85)
 
 [Repo Containing Home Page done in HTML/CSS](https://github.com/ctdupuis/html-css-1.git)
-
-## Screenshots
-
-### Menu Page
-Desktop
-![Menu Desk](menu_page.png)
-
-Mobile
-![Menu Mobile](menu_mobile.png)
 
 ## Front End
 
