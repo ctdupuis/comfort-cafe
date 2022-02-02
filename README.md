@@ -6,7 +6,7 @@ The Comfort Café is an app designed around the idea of a restaurant. This is pu
 
 ## Features
 
-- Authentication and authorization including administrator privileges
+- Authentication and authorization
 - Order placement and order history tracking
 - Dynamic menu page with filters based on food categories
 - Data validation to prevent users from persisting incomplete or malicious data
