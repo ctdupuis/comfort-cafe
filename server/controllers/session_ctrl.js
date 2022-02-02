@@ -14,7 +14,7 @@ module.exports = {
             req.session.user = secureUser;
             res.status(200).send(secureUser);
         } else {
-            res.status(400).send({ alert: "Invalid username or password"})
+            res.status(400).send({ alert: {type: "error", message: "Invalid username or password"}})
         }
     },
     register: async(req, res) => {
@@ -29,7 +29,7 @@ module.exports = {
             req.session.user = secureUser;
             res.status(200).send(secureUser);
         } catch (err) {
-            res.status(400).send({ alert: "Email already exists" });
+            res.status(400).send({ alert: { type: "error", message: "That email already exists"} });
         }
     },
     auth: (req, res) => {
@@ -41,6 +41,6 @@ module.exports = {
     },
     logout: (req, res) => {
         req.session.destroy();
-        res.status(200).send({alert: "Logged out successfully"});
+        res.status(200).send({alert: {type: "success", message: "Successfully logged out"} });
     }
 }

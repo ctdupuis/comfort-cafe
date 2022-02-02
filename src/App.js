@@ -15,13 +15,14 @@ import Contact from './components/static/Contact';
 import { register, authStatus, login, logout } from './actions/user_actions';
 import { getItems } from './actions/item_actions';
 import { getOrder, clearOrder, checkHistory, createOrder, updateOrder, completeOrder } from './actions/order_actions';
+import { clearAlert } from './actions/alert_actions';
 
 import { connect } from 'react-redux';
 import OrderConfirm from './components/orders/Confirm/OrderConfirm';
 import AlertHandler from './components/static/AlertHandler';
 
 function App({
-   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, clearOrder, checkHistory, createOrder, updateOrder, completeOrder, alert
+   register, authStatus, currentUser, login, logout, getItems, items, order, getOrder, clearOrder, checkHistory, createOrder, updateOrder, completeOrder, alert, clearAlert
   }) 
   {
   
@@ -40,7 +41,7 @@ function App({
               <Header currentUser={currentUser} logout={logout}
               {...props} />
               <Nav />
-              <AlertHandler alert={alert} />
+              <AlertHandler alert={alert} clearAlert={clearAlert} />
             </>
           )
         }}
@@ -113,6 +114,7 @@ export default connect(
     checkHistory,
     createOrder,
     updateOrder,
-    completeOrder
+    completeOrder,
+    clearAlert
   }
 )(App);
