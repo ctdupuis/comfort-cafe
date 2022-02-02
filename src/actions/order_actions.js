@@ -17,6 +17,7 @@ export const clearOrder = id => {
         const response = await axios.put(`${API_ROOT}/orders/${id}/clear`);
         const order = response.data;
         dispatch({ type: 'CLEAR_ITEMS' })
+        dispatch({ type: 'INIT_ALERT', payload: {type: 'success', message: 'Cart cleared'}})
         dispatch({ type: 'END_LOAD'})
     }
 }
@@ -64,7 +65,7 @@ export const completeOrder = id => {
         const response = await axios.put(`${API_ROOT}/orders/${id}/complete`)
         const order = response.data;
         dispatch({ type: 'COMPLETE_ORDER', payload: order })
-        console.log("completion action:", order)
+        dispatch({ type: 'INIT_ALERT', payload: { type: 'success', message: `Order successfully placed! Your confirmation number is ${order.confirmation}`}})
         dispatch({type: 'END_LOAD'})
     }
 }

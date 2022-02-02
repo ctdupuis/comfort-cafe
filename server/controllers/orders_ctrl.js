@@ -11,7 +11,7 @@ module.exports = {
             const insertion = await Order.create(newOrder);
             res.status(200).send(insertion);
         } catch (err) {
-            console.log("Error:", err)
+            res.status(404).send({ alert: { type: 'error', message: "There was a problem creating your order"}})
         }
     },
     getCurrentOrder: async(req, res) => {

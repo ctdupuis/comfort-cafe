@@ -154,7 +154,7 @@
         padding: 2%;
         margin-bottom: 2%;
         overflow-x: scroll;
-        border: 1px solid var(--d-green);
+        border-bottom: 1px solid var(--d-green);
         justify-content: space-evenly;
         display: flex;
     }
