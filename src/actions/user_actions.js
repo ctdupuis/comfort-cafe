@@ -1,18 +1,17 @@
 import axios from 'axios';
 import { API_ROOT } from '../constants';
 
-export const login = (userdata, history) => {
+export const login = (userdata) => {
     return async (dispatch) => {
         const response = await axios.post(`${API_ROOT}/users/login`, {
             userdata
         }, { withCredentials: true });
         const user = response.data
         dispatch({ type: 'LOGIN_USER', payload: user });
-        history.replace("/");
     }
 }
 
-export const register = (userdata, history) => {
+export const register = (userdata) => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.post(`${API_ROOT}/users/register`,
@@ -22,7 +21,6 @@ export const register = (userdata, history) => {
         const user = response.data;
         dispatch({ type: 'LOGIN_USER', payload: user })
         dispatch({ type: 'END_LOAD' })
-        history.replace("/");
     }
 }
 
@@ -41,7 +39,7 @@ export const authStatus = () => {
     }
 }
 
-export const logout = (history) => {
+export const logout = () => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.get(`${API_ROOT}/users/logout`, { withCredentials:true });
@@ -50,6 +48,5 @@ export const logout = (history) => {
         dispatch({ type: 'LOGOUT_USER' })
         dispatch({type: 'CLEAR_ORDER'})
         dispatch({ type: 'END_LOAD' })
-        // history.replace("/")
     }
 }
